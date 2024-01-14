@@ -1,12 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Salsa&display=swap");
+
 * {
-    margin: 0;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    color: var(--font-color);
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  color: var(--font-color);
+  font-family: var(--font-style1);
+}
+
+:root {
+  --background: rgb(24, 24, 24);
+  --primary: #3b3486;
+  --hightlight: #f8e559;
+  --secondary: #864af9;
+  --font-color: rgb(225, 225, 225);
+  --font-style1: "Nunito", sans-serif;
+  --font-style2: "Salsa", cursive;
+}
+
+/* body & sections */
+body {
+  background-color: var(--background);
+  overflow: hidden;
+}
+section {
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+}
+/* body & sections */
+
+/* mainSection */
+.mainSection::after,
+.mainSection::before {
+  content: "";
+  position: absolute;
+  border-radius: 200%;
+  opacity: 0.75;
+  filter: blur(100px);
+  transform: translateY(-100px);
+  width: 50%;
+}
+.mainSection::after {
+  inset: -30% -5%;
+  aspect-ratio: 3/2;
+  background: #f8e559;
+  animation: 6s moveBlobs linear infinite alternate;
+}
+.mainSection::before {
+  inset: -30% -10%;
+  aspect-ratio: 1/1;
+  background: #864af9;
+  animation: 4s moveBlobs linear infinite alternate;
+}
+@keyframes moveBlobs {
+  from {
+    transform: translateY(-50px) translateX(50px) rotate(-60deg);
   }
-  
-  :root {
-    --background: black;
-    --font-color: white;
+  to {
+    transform: translateY(50px) translateX(-50px) rotate(60deg);
   }
+}
+.mainSection > * {
+  width: 50%;
+  height: 100%;
+  display: flex;
+}
+
+/* imageContainer */
+.imageContainer > .image {
+  display: flex;
+}
+.imageContainer > .image > img {
+  width: 60%;
+  border-radius: 0 0 50% 50%;
+  opacity: 1;
+}
+
+/* introText */
+.introText {
+  display: flex;
+  flex-direction: column;
+  padding: 0 100px;
+}
+.introText > .textContainer > h1 {
+  color: var(--secondary);
+  font-size: 3em;
+  font-weight: bolder;
+  font-family: var(--font-style2);
+  text-shadow: 5px 5px var(--primary);
+}
+
+/* introButtons */
+.introButtons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+  margin-top: 20px;
+}
+.introButtons > button {
+  background: var(--secondary);
+  border: 0;
+  width: 150px;
+  height: 35px;
+  border-radius: 10px;
+  box-shadow: 5px 5px var(--primary);
+}
+.introButtons > button:hover {
+  cursor: pointer;
+}
+
+/* mainSection */
+
+/* Mobile Adjustments */
+@media only screen and (max-width: 1000px) {
+  .mainSection {
+    flex-direction: column;
+  }
+  .mainSection > * {
+    width: 100%;
+    height: 50%;
+  }
+  .mainSection::after,
+  .mainSection::before {
+    inset: -20% -20%;
+    width: 100%;
+  }
+  .introText{
+    padding: 0 50px;
+  }
+}
+/* Mobile Adjustments */
