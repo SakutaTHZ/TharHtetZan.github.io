@@ -15,6 +15,7 @@
   --hightlight: #f8e559;
   --secondary: #864af9;
   --font-color: rgb(225, 225, 225);
+  --shadow: rgba(0, 0, 0, 0.3);
   --font-style1: "Nunito", sans-serif;
   --font-style2: "Salsa", cursive;
 }
@@ -85,11 +86,11 @@ section {
   padding: 0 100px;
 }
 .introText > .textContainer > h1 {
-  color: var(--secondary);
+  color: var(--hightlight);
   font-size: 3em;
   font-weight: bolder;
   font-family: var(--font-style2);
-  text-shadow: 5px 5px var(--primary);
+  text-shadow: 5px 5px 10px var(--shadow);
 }
 
 /* introButtons */
@@ -106,7 +107,7 @@ section {
   width: 150px;
   height: 35px;
   border-radius: 10px;
-  box-shadow: 5px 5px var(--primary);
+  box-shadow: 5px 5px 10px var(--shadow);
 }
 .introButtons > button:hover {
   cursor: pointer;
