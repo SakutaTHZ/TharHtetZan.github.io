@@ -11,9 +11,12 @@
 
 :root {
   --background: rgb(24, 24, 24);
-  --primary: #3b3486;
-  --hightlight: #f8e559;
-  --secondary: #864af9;
+  --primary: #635EE2;
+  /* --primary: #3b3486; */
+  --hightlight: #D3F5CF;
+  /* --hightlight: #f8e559; */
+  --secondary: #A8DBFA;
+  /* --secondary: #864af9; */
   --font-color: rgb(225, 225, 225);
   --shadow: rgba(0, 0, 0, 0.3);
   --font-style1: "Nunito", sans-serif;
@@ -38,7 +41,7 @@ section {
   content: "";
   position: absolute;
   border-radius: 200%;
-  opacity: 0.75;
+  opacity: 0.6;
   filter: blur(100px);
   transform: translateY(-100px);
   width: 50%;
@@ -46,21 +49,21 @@ section {
 .mainSection::after {
   inset: -30% -5%;
   aspect-ratio: 3/2;
-  background: #f8e559;
+  background: var(--hightlight);
   animation: 6s moveBlobs linear infinite alternate;
 }
 .mainSection::before {
   inset: -30% -10%;
   aspect-ratio: 1/1;
-  background: #864af9;
+  background: var(--secondary);
   animation: 4s moveBlobs linear infinite alternate;
 }
 @keyframes moveBlobs {
   from {
-    transform: translateY(-50px) translateX(50px) rotate(-60deg);
+    transform: translateY(-50px) translateX(50px) rotate(-60deg) scale(0.8);
   }
   to {
-    transform: translateY(50px) translateX(-50px) rotate(60deg);
+    transform: translateY(50px) translateX(-50px) rotate(60deg) scale(1);
   }
 }
 .mainSection > * {
@@ -87,7 +90,7 @@ section {
 }
 .introText > .textContainer > h1 {
   color: var(--hightlight);
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: bolder;
   font-family: var(--font-style2);
   text-shadow: 5px 5px 10px var(--shadow);
@@ -101,16 +104,47 @@ section {
   width: 100%;
   margin-top: 20px;
 }
-.introButtons > button {
-  background: var(--secondary);
-  border: 0;
+
+/* shinyButton */
+.shinyButton{
+  position: relative;
+  background: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
   width: 150px;
   height: 35px;
   border-radius: 10px;
   box-shadow: 5px 5px 10px var(--shadow);
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
 }
-.introButtons > button:hover {
+.shinyButton::before{
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 30%;
+  background: linear-gradient(45deg,var(--secondary),var(--secondary),var(--primary));
+  border-radius: 120%;
+  filter: blur(20px);
+  inset: -50% 50%;
+  z-index: -10;
+  transition: all 1s ease-in-out,background 3s ease-in-out,filter 1.5s ease-in-out;
+}
+.shinyButton:hover {
   cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--background);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+.shinyButton:hover::before{
+  background: linear-gradient(45deg,var(--secondary),var(--secondary),var(--primary));
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  filter: blur(0px);
+  inset: 0;
 }
 
 /* mainSection */
