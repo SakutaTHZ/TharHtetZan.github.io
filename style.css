@@ -33,6 +33,39 @@ section {
   height: 100dvh;
   display: flex;
 }
+nav{
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  width: 100dvw;
+  height: 35px;
+  padding: 0 20px;
+  /* background: var(--primary); */
+}
+.menu,.menu::before,.menu::after{
+  position: relative;
+  width: 25px;
+  height: 4px;
+  background: var(--hightlight);
+  z-index: 2;
+  transition: all 0.5s ease-in-out;
+}
+.menu::before,.menu::after{
+  content: '';
+  position: absolute;
+  inset: -10px 0;
+}
+.menu::after{
+  inset: 10px 0;
+}
+.menu:hover,.menu:hover::before,.menu:hover::after{
+  cursor: pointer;
+  inset: 0;
+  rotate: 45deg;
+}
+.menu:hover::after,.menu:hover::before{
+  rotate: -90deg;
+}
 /* body & sections */
 
 /* mainSection */
@@ -124,7 +157,7 @@ section {
   position: absolute;
   width: 60%;
   height: 30%;
-  background: linear-gradient(45deg,var(--secondary),var(--secondary),var(--primary));
+  background: linear-gradient(-45deg,var(--secondary),var(--secondary),var(--primary));
   border-radius: 120%;
   filter: blur(20px);
   inset: -50% 50%;
