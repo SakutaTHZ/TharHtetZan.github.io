@@ -110,12 +110,21 @@ nav{
 
 /* imageContainer */
 .imageContainer > .image {
+  position: relative;
   display: flex;
+  width: 50%;
+  height: 50%;
+  border: 3px solid var(--hightlight);
+  border-left: 3px solid var(--secondary);
+  border-bottom: 3px solid var(--primary);
+  border-radius: 20px;
 }
 .imageContainer > .image > img {
-  width: 60%;
-  border-radius: 0 0 50% 50%;
+  position: absolute;
+  bottom: 0;
+  width: 150%;
   opacity: 1;
+  transform: translateX(10px);
 }
 
 /* introText */
@@ -238,6 +247,10 @@ nav{
   }
   .introText{
     padding: 0 50px;
+  }
+  .imageContainer{
+    flex-direction: column;
+    justify-content: flex-end;
   }
 }
 /* Mobile Adjustments */
