@@ -27,6 +27,9 @@
 body {
   background-color: var(--background);
   overflow: hidden;
+  background-image: linear-gradient(to right,#33333350 1px,transparent 1px),
+  linear-gradient(to bottom,#33333350 1px,transparent 1px);
+  background-size: 4vh 4vh;
 }
 section {
   width: 100dvw;
@@ -38,7 +41,7 @@ nav{
   justify-content: flex-end;
   position: fixed;
   width: 100dvw;
-  height: 35px;
+  height: 50px;
   padding: 0 20px;
   /* background: var(--primary); */
 }
@@ -122,11 +125,47 @@ nav{
   padding: 0 100px;
 }
 .introText > .textContainer > h1 {
-  color: var(--hightlight);
-  font-size: 2.5em;
+  position: relative;
+  color: rgba(255, 255, 255, 0.1);
+  font-size: 2.2em;
+  letter-spacing:2px;
   font-weight: bolder;
   font-family: var(--font-style2);
   text-shadow: 5px 5px 10px var(--shadow);
+  animation: displayText 12s infinite;
+  animation-delay: calc(-4s *var(--i));
+}
+.introText > .textContainer > h1::before{
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  overflow: hidden;
+  color: var(--secondary);
+  border-right:4px solid var(--secondary);
+  text-shadow:inset 1px 1px var(--hightlight),inset -1px -1px var(--hightlight);
+  filter: drop-shadow(0 0 5px var(--secondary)) drop-shadow(0 0 25px var(--secondary));
+  animation: writeText 4s linear infinite;
+}
+.introText > .textContainer >p:last-child{
+  margin-top: 10px;
+  text-align: justify;
+}
+@keyframes writeText {
+  0%,10%,100%{
+    width: 0;
+  }70%,90%{
+    width: 100%;
+  }
+}
+
+@keyframes displayText {
+  0%{
+    display: inline-block;
+  }
+  33.33%,100%{
+    display: none;
+  }
 }
 
 /* introButtons */
@@ -150,7 +189,7 @@ nav{
   border-radius: 10px;
   box-shadow: 5px 5px 10px var(--shadow);
   overflow: hidden;
-  transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out,filter 3s ease-in-out;;
 }
 .shinyButton::before{
   content: "";
@@ -170,6 +209,7 @@ nav{
   color: var(--background);
   font-weight: bold;
   letter-spacing: 0.5px;
+  filter: drop-shadow(0 0 5px var(--secondary)) drop-shadow(0 0 50px var(--secondary));
 }
 .shinyButton:hover::before{
   background: linear-gradient(45deg,var(--secondary),var(--secondary),var(--primary));
