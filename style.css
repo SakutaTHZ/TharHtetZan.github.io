@@ -55,21 +55,31 @@ nav{
   z-index: 20;
   transition: all 0.5s ease-in-out;
 }
+.menu{
+  height: 25px;
+  background: transparent;
+}
 .menu::before,.menu::after{
   content: '';
   position: absolute;
-  inset: -10px 0;
+  inset: 0;
+  box-shadow: 0 10px var(--hightlight);
 }
 .menu::after{
-  inset: 10px 0;
+  inset: 20px 0;
+  box-shadow: 0 -10px var(--hightlight);
 }
 .menu.navOpen,.menu.navOpen::before,.menu.navOpen::after{
   cursor: pointer;
-  inset: 0;
   rotate: 45deg;
+  box-shadow: none;
 }
 .menu.navOpen::after,.menu.navOpen::before{
+  inset: 10px 0;
   rotate: -90deg;
+}.menu.navOpen::after{
+  inset: 10px 0;
+  rotate: 0deg;
 }
 .menu:hover{
   cursor: pointer;
@@ -110,7 +120,9 @@ nav{
   width: 100%;
   height: calc(100%/5);
   font-size: 1.5em;
-}.navLinkBox>a:hover{
+}
+.navLinkBox>a:hover{
+  border-radius: 20px;
   background: var(--shadow);
 }
 
