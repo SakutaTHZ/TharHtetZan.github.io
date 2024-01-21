@@ -95,7 +95,7 @@ nav{
   z-index: 10;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0;
   padding: 0px;
   opacity: 0;
   overflow: hidden;
@@ -115,15 +115,57 @@ nav{
   transition: all 1s ease-in-out;
 }
 .navLinkBox>a{
+  position: relative;
   display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
   text-decoration: none;
-  width: 100%;
-  height: calc(100%/5);
-  font-size: 1.5em;
-}
-.navLinkBox>a:hover{
-  border-radius: 20px;
   background: var(--shadow);
+  width: 300px;
+  height: calc(100%/10);
+  font-size: 1.2em;
+  transform: skewY(-10deg);
+  z-index: var(--i);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  transition: all 0.5s ease-in-out;
+}
+.navLinkBox>a::before{
+  content: '';
+  position: absolute;
+  inset: -20px -40px;
+  width: 40px;
+  height: 100%;
+  background: var(--background);
+  transform-origin: bottom;
+  transform: skewY(45deg);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  transition: all 0.5s ease-in-out;
+}
+.navLinkBox>a::after{
+  content: '';
+  position: absolute;
+  inset: -40px -20px;
+  width: 100%;
+  height: 40px;
+  background: var(--shadow);
+  transform-origin: right;
+  transform: skewX(45deg);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  transition: all 0.5s ease-in-out;
+}
+.navLinkBox>a:hover,.navLinkBox>a.activeNav{
+  filter: drop-shadow(0 0 10px var(--shadow));
+  transform: translateX(40px) skewY(-10deg);
+  background: linear-gradient(90deg,var(--hightlight),var(--secondary),var(--primary));
+}
+.navLinkBox>a:hover::after,.navLinkBox>a.activeNav::after{
+  background: linear-gradient(45deg,var(--hightlight),var(--secondary),var(--primary));
+}
+.navLinkBox>a:hover::before,.navLinkBox>a.activeNav::before{
+  background: linear-gradient(45deg,var(--primary),var(--secondary),var(--hightlight));
 }
 
 /* body & sections */
@@ -308,6 +350,9 @@ nav{
   .imageContainer{
     flex-direction: column;
     justify-content: flex-end;
+  }
+  .navLinkBox>a{
+    width: 250px;
   }
 }
 /* Mobile Adjustments */
