@@ -126,7 +126,7 @@ nav{
   font-size: 1.2em;
   transform: skewY(-10deg);
   z-index: var(--i);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
   transition: all 0.5s ease-in-out;
 }
@@ -139,7 +139,7 @@ nav{
   background: var(--background);
   transform-origin: bottom;
   transform: skewY(45deg);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
   transition: all 0.5s ease-in-out;
 }
@@ -152,7 +152,7 @@ nav{
   background: var(--shadow);
   transform-origin: right;
   transform: skewX(45deg);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
   transition: all 0.5s ease-in-out;
 }
