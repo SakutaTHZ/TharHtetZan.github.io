@@ -91,7 +91,10 @@ nav{
   width: 0;
   height: 100dvh;
   backdrop-filter: blur(10px);
-  background: transparent;
+  
+  background-image: linear-gradient(to right,#33333350 1px,transparent 1px),
+  linear-gradient(to bottom,#33333350 1px,transparent 1px);
+  background-size: 4vh 4vh;
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -120,7 +123,7 @@ nav{
   justify-content: space-between;
   padding: 0 20px;
   text-decoration: none;
-  background: var(--shadow);
+  background: linear-gradient(90deg,var(--shadow),var(--shadow),var(--shadow));
   width: 300px;
   height: calc(100%/10);
   font-size: 1.2em;
@@ -128,7 +131,11 @@ nav{
   z-index: var(--i);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
-  transition: all 0.5s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.navLinkBox>a::selection {
+  background-color: transparent;
 }
 .navLinkBox>a::before{
   content: '';
@@ -136,12 +143,12 @@ nav{
   inset: -20px -40px;
   width: 40px;
   height: 100%;
-  background: var(--background);
+  background: linear-gradient(45deg,var(--background),var(--background),var(--background));
   transform-origin: bottom;
   transform: skewY(45deg);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 .navLinkBox>a::after{
   content: '';
@@ -149,12 +156,12 @@ nav{
   inset: -40px -20px;
   width: 100%;
   height: 40px;
-  background: var(--shadow);
+  background: linear-gradient(45deg,var(--shadow),var(--shadow),var(--shadow));
   transform-origin: right;
   transform: skewX(45deg);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
-  transition: all 0.5s ease-in-out;
+  transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 .navLinkBox>a:hover,.navLinkBox>a.activeNav{
   filter: drop-shadow(0 0 10px var(--shadow));
@@ -166,6 +173,19 @@ nav{
 }
 .navLinkBox>a:hover::before,.navLinkBox>a.activeNav::before{
   background: linear-gradient(45deg,var(--primary),var(--secondary),var(--hightlight));
+}
+.currentNav{
+  position: absolute;
+  width: 50%;
+  left: 0;
+  bottom: 0;
+  font-size: 10em;
+  line-height:1em;
+  letter-spacing: 10px;
+  color: rgba(0, 0, 0, 0.1);
+  font-weight: bolder;
+  text-shadow: 0 -50vh rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
 }
 
 /* body & sections */
@@ -353,6 +373,10 @@ nav{
   }
   .navLinkBox>a{
     width: 250px;
+  }
+  .currentNav{
+    text-shadow: 0 -50vh rgba(0, 0, 0, 0.1);
+    font-size: 10em;
   }
 }
 /* Mobile Adjustments */
