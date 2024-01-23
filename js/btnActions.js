@@ -13,11 +13,22 @@ const navLinks = document.querySelectorAll('.navLinkBox > a')
 const currentNav = document.querySelector('.currentNav')
 navLinks.forEach(nav => {
     nav.addEventListener("click",()=>{
-        console.log("Nav Open")
+        // Darken the navLinkBox background
+        navLinkBox.classList.add('darken')
+        console.log(`${nav.innerText} Opened`)
         navLinks.forEach(allnav => {
             allnav.classList.remove('activeNav')
         })
         nav.classList.add('activeNav')
+        nav.classList.add('navClicked')
+        setTimeout(() => {
+            menu.classList.remove('navOpen')
+            navLinkBox.classList.remove('navLinkBoxOpen')
+        }, 2500);
+        setTimeout(() => {
+            nav.classList.remove('navClicked')
+            navLinkBox.classList.remove('darken')
+        }, 3000);
         currentNav.innerHTML=nav.dataset.name
     })
 });

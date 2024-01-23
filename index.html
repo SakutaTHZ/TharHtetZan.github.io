@@ -10,7 +10,8 @@
     </div>
 </head>
 <body>
-    <section class="mainSection">
+    <!-- main section start-->
+    <section id="home" class="mainSection">
         <div class="imageContainer">
             <div class="image">
                 <img src="images/myProfile.png" alt="">
@@ -30,17 +31,27 @@
             </div>
         </div>
     </section>
+    <!-- main section end -->
+    
+    <!-- about me start -->
+    <section id="aboutMeSection" class="aboutMeSection">
+        <h1>This is about me</h1>
+    </section>
+    <!-- about me end -->
+
+    <!-- nav bar start -->
     <nav>
         <div class="menu"></div>
         <div class="navLinkBox">
             <p class="currentNav">Home Page</p>
-            <a data-name="Home Page" class="nav activeNav" href="#" style="--i:5;"><ion-icon name="home"></ion-icon>Home</a>
-            <a data-name="About Me" href="#" style="--i:4;"><ion-icon name="person"></ion-icon>About Me</a>
+            <a data-name="Home Page" class="nav activeNav" href="#home" style="--i:5;"><ion-icon name="home"></ion-icon>Home</a>
+            <a data-name="About Me" href="#aboutMeSection" style="--i:4;"><ion-icon name="person"></ion-icon>About Me</a>
             <a data-name="My Works" href="#" style="--i:3;"><ion-icon name="code-working"></ion-icon>My Works</a>
             <a data-name="Contact Now" href="#" style="--i:2;"><ion-icon name="share-social"></ion-icon>Contact</a>
             <a data-name="Play ground" href="#" style="--i:1;"><ion-icon name="cafe"></ion-icon>Playground</a>
         </div>
     </nav>
+    <!-- nav bar end -->
     
     <!-- js scripts here -->
     <div class="jsScripts">
