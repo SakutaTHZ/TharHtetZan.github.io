@@ -202,8 +202,15 @@ nav{
   height: 100%;
   width: 100%;
   font-size: 3em;
-  /* background: linear-gradient(45deg,var(--primary),var(--secondary),var(--hightlight)); */
+  background: linear-gradient(-45deg,var(--primary),var(--secondary),var(--hightlight));
   z-index: 100;
+  overflow: hidden;
+}
+.navLinkBox>a.navClicked>ion-icon{
+  position: absolute;
+  bottom: -10%;
+  font-size: 10em;
+  color: rgba(255, 255, 255, 0.1);
 }
 .navLinkBox.darken{
   background: var(--background);
