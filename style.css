@@ -95,7 +95,7 @@ nav{
   width: 0;
   height: 100dvh;
   backdrop-filter: blur(10px);
-  
+  padding: 20px;
   background-image: linear-gradient(to right,#33333350 1px,transparent 1px),
   linear-gradient(to bottom,#33333350 1px,transparent 1px);
   background-size: 4vh 4vh;
@@ -104,7 +104,7 @@ nav{
   flex-direction: column;
   opacity: 0;
   overflow: hidden;
-  transition: all 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out,opacity 0.5s ease-in-out;
 }.navLinkBox>*{
   opacity: 0;
 }
@@ -130,7 +130,7 @@ nav{
   backdrop-filter: blur(15px);
   -webkit-tap-highlight-color: transparent;
   transform-origin: right;
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55),width 0.8s linear,height 0.8s linear;
+  transition: width 0.8s linear,height 0.8s linear;
 }
 .navLinkBox>li>a{
   width: 100%;
@@ -155,7 +155,7 @@ nav{
   transform: skewY(45deg);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  /* transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); */
 }
 .navLinkBox>li::after{
   content: '';
@@ -168,7 +168,7 @@ nav{
   transform: skewX(45deg);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
-  transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  /* transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55); */
 }
 .navLinkBox>li:hover,.navLinkBox>li.activeNav{
   filter: drop-shadow(0 0 10px var(--shadow));
@@ -211,7 +211,7 @@ nav{
   font-size: 3em;
   background: linear-gradient(-45deg,var(--primary),var(--secondary),var(--hightlight));
   z-index: 100;
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55),width 1s linear,height 0s linear,transform 0s linear,z-index 0s linear;
+  transition: width 1s cubic-bezier(0.68, -0.55, 0.27, 1.55),height 0s linear,transform 0s linear,z-index 0s linear;
 }
 .navLinkBox>li.navClicked>a>ion-icon{
   position: absolute;
@@ -420,7 +420,7 @@ nav{
     border-radius: 10px;
     overflow: hidden;
     top: 0;
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55),width 0s linear,height 1s linear,transform 0s linear,z-index 0s linear;
+    transition: width 0s linear,height 1s cubic-bezier(0.68, -0.55, 0.27, 1.55),transform 0s linear,z-index 0s linear;
   }
 }
 /* Mobile Adjustments */
