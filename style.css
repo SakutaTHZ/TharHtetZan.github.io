@@ -104,6 +104,7 @@ nav{
   flex-direction: column;
   opacity: 0;
   overflow: hidden;
+  box-shadow: -30px 0 black;
   transition: width 0.5s ease-in-out,opacity 0.5s ease-in-out;
 }.navLinkBox>*{
   opacity: 0;
@@ -130,7 +131,7 @@ nav{
   backdrop-filter: blur(15px);
   -webkit-tap-highlight-color: transparent;
   transform-origin: right;
-  transition: width 0.8s linear,height 0.8s linear;
+  transition:transform 0.5s ease-in-out, width 0.8s linear,height 0.8s linear;
 }
 .navLinkBox>li>a{
   width: 100%;
@@ -144,7 +145,7 @@ nav{
 .currentNav::selection,.navLinkBox a::selection {
   background-color: transparent;
 }
-.navLinkBox>li::before{
+/* .navLinkBox>li::before{
   content: '';
   position: absolute;
   inset: -20px -40px;
@@ -155,7 +156,6 @@ nav{
   transform: skewY(45deg);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
-  /* transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); */
 }
 .navLinkBox>li::after{
   content: '';
@@ -168,11 +168,10 @@ nav{
   transform: skewX(45deg);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
-  /* transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55); */
-}
+} */
 .navLinkBox>li:hover,.navLinkBox>li.activeNav{
   filter: drop-shadow(0 0 10px var(--shadow));
-  transform: translateX(40px) skewY(-10deg);
+  transform: translateX(20px) skewY(-10deg);
   background: linear-gradient(90deg,var(--hightlight),var(--secondary),var(--primary));
 }
 .navLinkBox>li:hover::after,.navLinkBox>li.activeNav::after{
@@ -195,9 +194,9 @@ nav{
   text-transform: uppercase;
   cursor: initial;
 }
-.navLinkBox>li.navClicked::before,.navLinkBox>li.navClicked::after{
+/* .navLinkBox>li.navClicked::before,.navLinkBox>li.navClicked::after{
   opacity: 0;
-}
+} */
 .navLinkBox>li.navClicked>a{
   justify-content: center;
 }
