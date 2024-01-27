@@ -41,15 +41,29 @@
 
     <!-- nav bar start -->
     <nav>
-        <div class="menu"></div>
-        <div class="navLinkBox">
+        <div class="menu navOpen"></div>
+        <ul class="navLinkBox navLinkBoxOpen">
             <p class="currentNav">Home Page</p>
-            <a data-name="Home Page" class="nav activeNav" href="#home" style="--i:5;"><ion-icon name="home"></ion-icon>Home</a>
-            <a data-name="About Me" href="#aboutMeSection" style="--i:4;"><ion-icon name="person"></ion-icon>About Me</a>
-            <a data-name="My Works" href="#" style="--i:3;"><ion-icon name="code-working"></ion-icon>My Works</a>
-            <a data-name="Contact Now" href="#" style="--i:2;"><ion-icon name="share-social"></ion-icon>Contact</a>
-            <a data-name="Play ground" href="#" style="--i:1;"><ion-icon name="cafe"></ion-icon>Playground</a>
-        </div>
+            <li data-name="Home Page" class="nav activeNav" style="--i:5;">
+                <a href="#home"><ion-icon name="home"></ion-icon>
+                    <p>Home</p>
+                </a>
+            </li>
+            <li data-name="About Me" style="--i:4;">
+                <a href="#aboutMeSection"><ion-icon name="person"></ion-icon>
+                    About Me
+                </a>
+            </li>
+            <li data-name="My Works" style="--i:3;">
+                <a href="#"><ion-icon name="code-working"></ion-icon>My Works</a>
+            </li>
+            <li data-name="Contact Now" style="--i:2;">
+                <a href="#"><ion-icon name="share-social"></ion-icon>Contact</a>
+            </li>
+            <li data-name="Play ground" style="--i:1;">
+                <a href="#"><ion-icon name="cafe"></ion-icon>Playground</a>
+            </li>
+        </ul>
     </nav>
     <!-- nav bar end -->
     

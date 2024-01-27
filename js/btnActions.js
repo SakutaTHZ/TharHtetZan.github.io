@@ -9,7 +9,7 @@ menu.addEventListener("click", () => {
     navLinkBox && navLinkBox.classList.contains('navLinkBoxOpen')?navLinkBox.classList.remove('navLinkBoxOpen'):navLinkBox.classList.add('navLinkBoxOpen')
 });
 
-const navLinks = document.querySelectorAll('.navLinkBox > a')
+const navLinks = document.querySelectorAll('.navLinkBox > li')
 const currentNav = document.querySelector('.currentNav')
 navLinks.forEach(nav => {
     nav.addEventListener("click",()=>{
