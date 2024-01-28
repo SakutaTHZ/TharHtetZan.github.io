@@ -24,6 +24,9 @@
 }
 
 /* body & sections */
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: var(--background);
   overflow: hidden;
@@ -233,6 +236,37 @@ nav{
   opacity: 1;
   transform: translateX(10px);
 }
+.imageContainer > .image > ion-icon{
+  position: absolute;
+  font-size: 3em;
+  animation: sway linear alternate infinite;
+}
+.imageContainer > .image > ion-icon:nth-child(1){
+  left: 25px;
+  top: 20%;
+  color: var(--secondary);
+  font-size: 4em;
+  animation-duration: 1.5s;
+}
+.imageContainer > .image > ion-icon:nth-child(2){
+  right: 15px;
+  top: 20px;
+  color: var(--hightlight);
+  animation-duration: 2s;
+}
+.imageContainer > .image > ion-icon:nth-child(3){
+  right: 5%;
+  top: 70%;
+  color: var(--primary);
+  animation-duration: 2.5s;
+}
+@keyframes sway {
+  from{
+    transform: translateY(-10px) scale(1);
+  }to{
+    transform: translateY(10px) scale(1.1);
+  }
+}
 
 /* introText */
 .introText {
@@ -358,6 +392,12 @@ nav{
   .imageContainer{
     flex-direction: column;
     justify-content: flex-end;
+  }
+  .imageContainer > .image > ion-icon{
+    font-size: 1.5em;
+  }
+  .imageContainer > .image > ion-icon:nth-child(1){
+    font-size: 2em;
   }
   .navLinkBox{
     backdrop-filter: blur(10px);
