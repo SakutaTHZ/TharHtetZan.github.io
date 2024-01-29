@@ -27,23 +27,27 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
   background-color: var(--background);
   overflow: hidden;
-  background-image: linear-gradient(to right,#33333350 1px,transparent 1px),
-  linear-gradient(to bottom,#33333350 1px,transparent 1px);
+  background-image: linear-gradient(to right, #33333350 1px, transparent 1px),
+    linear-gradient(to bottom, #33333350 1px, transparent 1px);
   background-size: 4vh 4vh;
   scroll-behavior: smooth;
 }
+
 section {
   width: 100dvw;
   height: 100dvh;
   display: flex;
 }
-section>*{
+
+section>* {
   transition: 0.5s ease-in-out;
 }
-nav{
+
+nav {
   display: flex;
   justify-content: flex-end;
   position: fixed;
@@ -54,7 +58,9 @@ nav{
   /* background: var(--primary); */
 }
 
-.menu,.menu::before,.menu::after{
+.menu,
+.menu::before,
+.menu::after {
   position: relative;
   width: 25px;
   height: 4px;
@@ -62,43 +68,56 @@ nav{
   z-index: 20;
   transition: all 0.5s ease-in-out;
 }
-.menu{
+
+.menu {
   height: 25px;
   background: transparent;
 }
-.menu::before,.menu::after{
+
+.menu::before,
+.menu::after {
   content: '';
   position: absolute;
   inset: 0;
   box-shadow: 0 10px var(--hightlight);
 }
-.menu::after{
+
+.menu::after {
   inset: 20px 0;
   box-shadow: 0 -10px var(--hightlight);
 }
-.menu.navOpen,.menu.navOpen::before,.menu.navOpen::after{
+
+.menu.navOpen,
+.menu.navOpen::before,
+.menu.navOpen::after {
   cursor: pointer;
   rotate: 45deg;
   box-shadow: none;
 }
-.menu.navOpen::after,.menu.navOpen::before{
+
+.menu.navOpen::after,
+.menu.navOpen::before {
   inset: 10px 0;
   rotate: -90deg;
-}.menu.navOpen::after{
+}
+
+.menu.navOpen::after {
   inset: 10px 0;
   rotate: 0deg;
 }
-.menu:hover{
+
+.menu:hover {
   cursor: pointer;
 }
+
 /* nav bar */
-.navLinkBox{
+.navLinkBox {
   position: fixed;
   right: 0;
   top: 0;
   height: 100dvh;
   width: 0;
-  background:none;
+  background: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -107,14 +126,16 @@ nav{
   list-style-type: none;
   overflow: hidden;
   transform: translateX(50px);
-  transition:  .4s cubic-bezier(0.375, 0.885, 0.32, 1.275);
+  transition: .4s cubic-bezier(0.375, 0.885, 0.32, 1.275);
 }
-.navLinkBoxOpen{
-  background: linear-gradient(90deg,transparent,var(--shadow),var(--shadow),var(--background));
+
+.navLinkBoxOpen {
+  background: linear-gradient(90deg, transparent, var(--shadow), var(--shadow), var(--background));
   transform: translateX(0);
   width: 100dvw;
 }
-.navLinkBox>li{
+
+.navLinkBox>li {
   position: relative;
   width: 0;
   height: 70px;
@@ -128,10 +149,14 @@ nav{
   transition: var(--i) cubic-bezier(0.375, 0.885, 0.32, 1.275);
   overflow: hidden;
 }
-.navLinkBox>li:hover,.navLinkBox>li.activeNav{
+
+.navLinkBox>li:hover,
+.navLinkBox>li.activeNav {
   width: 320px;
 }
-.navLinkBox>li::before,.navLinkBox>li.activeNav::before{
+
+.navLinkBox>li::before,
+.navLinkBox>li.activeNav::before {
   content: '';
   position: absolute;
   right: -20%;
@@ -140,29 +165,37 @@ nav{
   height: 140%;
   z-index: 1;
   filter: blur(20px);
-  background: linear-gradient(45deg,var(--hightlight),var(--secondary),var(--primary));
+  background: linear-gradient(45deg, var(--hightlight), var(--secondary), var(--primary));
   transition: 2s cubic-bezier(0.375, 0.885, 0.32, 1.275);
 }
-.navLinkBox>li:hover::before,.navLinkBox>li.activeNav::before{
+
+.navLinkBox>li:hover::before,
+.navLinkBox>li.activeNav::before {
   width: 130%;
 }
-.navLinkBox>li>a>ion-icon{
+
+.navLinkBox>li>a>ion-icon {
   position: absolute;
   left: 30px;
   font-size: 1.5em;
   transition: 1s cubic-bezier(0.375, 0.885, 0.32, 1.275);
 }
-.navLinkBox>li:hover>a>*,.navLinkBox>li.activeNav>a>*{
+
+.navLinkBox>li:hover>a>*,
+.navLinkBox>li.activeNav>a>* {
   font-weight: bold;
   color: var(--background);
 }
-.navLinkBoxOpen>li{
+
+.navLinkBoxOpen>li {
   width: 300px;
 }
-.navLinkBoxOpen>li>*{
- z-index: 2;
+
+.navLinkBoxOpen>li>* {
+  z-index: 2;
 }
-.navLinkBox>li>a{
+
+.navLinkBox>li>a {
   width: 100%;
   height: 100%;
   padding: 30px;
@@ -171,7 +204,8 @@ nav{
   align-items: center;
   text-decoration: none;
 }
-.navLinkBox>img{
+
+.navLinkBox>img {
   position: absolute;
   left: 10px;
   bottom: 0;
@@ -192,34 +226,39 @@ nav{
   transform: translateY(-100px);
   width: 50%;
 }
+
 .mainSection::after {
   inset: -30% -5%;
   aspect-ratio: 3/2;
   background: var(--hightlight);
   animation: 6s moveBlobs linear infinite alternate;
 }
+
 .mainSection::before {
   inset: -30% -10%;
   aspect-ratio: 1/1;
   background: var(--secondary);
   animation: 4s moveBlobs linear infinite alternate;
 }
+
 @keyframes moveBlobs {
   from {
     transform: translateY(-50px) translateX(50px) rotate(-60deg) scale(0.8);
   }
+
   to {
     transform: translateY(50px) translateX(-50px) rotate(60deg) scale(1);
   }
 }
-.mainSection > * {
+
+.mainSection>* {
   width: 50%;
   height: 100%;
   display: flex;
 }
 
 /* imageContainer */
-.imageContainer > .image {
+.imageContainer>.image {
   position: relative;
   display: flex;
   width: 50%;
@@ -229,41 +268,49 @@ nav{
   border-bottom: 3px solid var(--primary);
   border-radius: 20px;
 }
-.imageContainer > .image > img {
+
+.imageContainer>.image>img {
   position: absolute;
   bottom: 0;
   width: 150%;
   opacity: 1;
   transform: translateX(10px);
 }
-.imageContainer > .image > ion-icon{
+
+.imageContainer>.image>ion-icon {
   position: absolute;
   font-size: 3em;
   animation: sway linear alternate infinite;
 }
-.imageContainer > .image > ion-icon:nth-child(1){
+
+.imageContainer>.image>ion-icon:nth-child(1) {
   left: 25px;
   top: 20%;
   color: var(--secondary);
   font-size: 4em;
   animation-duration: 1.5s;
 }
-.imageContainer > .image > ion-icon:nth-child(2){
+
+.imageContainer>.image>ion-icon:nth-child(2) {
   right: 15px;
   top: 20px;
   color: var(--hightlight);
   animation-duration: 2s;
 }
-.imageContainer > .image > ion-icon:nth-child(3){
+
+.imageContainer>.image>ion-icon:nth-child(3) {
   right: 5%;
   top: 70%;
   color: var(--primary);
   animation-duration: 2.5s;
 }
+
 @keyframes sway {
-  from{
+  from {
     transform: translateY(-10px) scale(1);
-  }to{
+  }
+
+  to {
     transform: translateY(10px) scale(1.1);
   }
 }
@@ -274,46 +321,58 @@ nav{
   flex-direction: column;
   padding: 0 100px;
 }
-.introText > .textContainer > h1 {
+
+.introText>.textContainer>h1 {
   position: relative;
   color: rgba(255, 255, 255, 0.1);
   font-size: 2.25em;
-  letter-spacing:2px;
+  letter-spacing: 2px;
   font-weight: bolder;
   font-family: var(--font-style2);
   text-shadow: 5px 5px 10px var(--shadow);
   animation: displayText 12s infinite;
   animation-delay: calc(-4s *var(--i));
 }
-.introText > .textContainer > h1::before{
+
+.introText>.textContainer>h1::before {
   content: attr(data-text);
   position: absolute;
   inset: 0;
   width: 100%;
   overflow: hidden;
   color: var(--hightlight);
-  border-right:4px solid var(--hightlight);
-  text-shadow:inset 1px 1px var(--hightlight),inset -1px -1px var(--hightlight);
+  border-right: 4px solid var(--hightlight);
+  text-shadow: inset 1px 1px var(--hightlight), inset -1px -1px var(--hightlight);
   filter: drop-shadow(0 0 5px var(--hightlight)) drop-shadow(0 0 25px var(--hightlight));
   animation: writeText 4s linear infinite;
 }
-.introText > .textContainer >p:last-child{
+
+.introText>.textContainer>p:last-child {
   margin-top: 10px;
   text-align: justify;
 }
+
 @keyframes writeText {
-  0%,10%,100%{
+
+  0%,
+  10%,
+  100% {
     width: 0;
-  }70%,90%{
+  }
+
+  70%,
+  90% {
     width: 100%;
   }
 }
 
 @keyframes displayText {
-  0%{
+  0% {
     display: inline-block;
   }
-  33.33%,100%{
+
+  33.33%,
+  100% {
     display: none;
   }
 }
@@ -328,7 +387,7 @@ nav{
 }
 
 /* shinyButton */
-.shinyButton{
+.shinyButton {
   position: relative;
   background: var(--shadow);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -339,20 +398,23 @@ nav{
   border-radius: 10px;
   box-shadow: 5px 5px 10px var(--shadow);
   overflow: hidden;
-  transition: 0.5s ease-in-out,filter 3s ease-in-out;;
+  transition: 0.5s ease-in-out, filter 3s ease-in-out;
+  ;
 }
-.shinyButton::before{
+
+.shinyButton::before {
   content: "";
   position: absolute;
   width: 60%;
   height: 30%;
-  background: linear-gradient(45deg,var(--hightlight),var(--secondary),var(--primary));
+  background: linear-gradient(45deg, var(--hightlight), var(--secondary), var(--primary));
   border-radius: 120%;
   filter: blur(20px);
   inset: -50% 50%;
   z-index: -10;
-  transition: all 1s ease-in-out,background 3s ease-in-out,filter 1.5s ease-in-out;
+  transition: all 1s ease-in-out, background 3s ease-in-out, filter 1.5s ease-in-out;
 }
+
 .shinyButton:hover {
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -361,8 +423,9 @@ nav{
   letter-spacing: 0.5px;
   filter: drop-shadow(0 0 5px var(--secondary)) drop-shadow(0 0 50px var(--secondary));
 }
-.shinyButton:hover::before{
-  background: linear-gradient(45deg,var(--hightlight),var(--secondary),var(--primary));
+
+.shinyButton:hover::before {
+  background: linear-gradient(45deg, var(--hightlight), var(--secondary), var(--primary));
   width: 100%;
   height: 100%;
   border-radius: 0;
@@ -372,38 +435,75 @@ nav{
 
 /* mainSection */
 
+/* aboutMeSection */
+.aboutMeSection {
+  display: flex;
+  padding: 30px;
+  gap: 20px;
+}
+
+.aboutMeSection>div {
+  display: flex;
+  width: calc(100%/3);
+  height: 100%;
+  border: 1px solid var(--shadow);
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
+}
+
+/* aboutMeSection */
+
 /* Mobile Adjustments */
 @media only screen and (max-width: 1000px) {
   .mainSection {
     flex-direction: column;
   }
-  .mainSection > * {
+
+  .mainSection>* {
     width: 100%;
     height: 50%;
   }
+
   .mainSection::after,
   .mainSection::before {
     inset: -20% -20%;
     width: 100%;
   }
-  .introText{
+
+  .introText {
     padding: 0 50px;
   }
-  .imageContainer{
+
+  .imageContainer {
     flex-direction: column;
     justify-content: flex-end;
   }
-  .imageContainer > .image > ion-icon{
+
+  .imageContainer>.image>ion-icon {
     font-size: 1.5em;
   }
-  .imageContainer > .image > ion-icon:nth-child(1){
+
+  .imageContainer>.image>ion-icon:nth-child(1) {
     font-size: 2em;
   }
-  .navLinkBox{
+
+  .navLinkBox {
     backdrop-filter: blur(10px);
   }
-  .navLinkBoxOpen{
+
+  .navLinkBoxOpen {
     width: 150dvw;
   }
+
+  .aboutMeSection {
+    flex-direction: column;
+  }
+
+  .aboutMeSection>div {
+    width: 100%;
+    height: calc(100%/3);
+  }
 }
+
 /* Mobile Adjustments */
