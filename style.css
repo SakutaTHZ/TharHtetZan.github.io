@@ -420,7 +420,7 @@ nav {
   width: 150px;
   height: 35px;
   border-radius: 10px;
-  box-shadow: 5px 5px 10px var(--shadow);
+  /* box-shadow: 5px 5px 10px var(--shadow); */
   overflow: hidden;
   transition: 0.5s ease-in-out, filter 3s ease-in-out;
 }
@@ -604,8 +604,9 @@ nav {
 .experienceBox {
   padding: 10px;
 }
-.experienceBox>h1{
-  margin-bottom: 20px;
+.experienceBox>h1,.skillBox>h1{
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--secondary);
 }
 .experienceBox > p{
   position: relative;
@@ -623,6 +624,54 @@ nav {
 }
 .experienceBox > p > small {
   font-size: 0.7em;
+}
+.skillBox{
+  padding: 0 10px;
+}
+.skill{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.skill>.skillProgress{
+  position: relative;
+  border: 1px solid white;
+  width: 75%;
+  height: 20px;
+  padding: 0 10px;
+  border-radius: 20px;
+}
+.skill>.skillProgress>.skillPoint{
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  left: 0;
+  width: var(--progress);
+  height: 100%;
+  background: linear-gradient(-45deg,var(--hightlight),var(--secondary),var(--primary));
+  border-radius: 20px;
+}
+.skill>.skillProgress>.skillPoint::before{
+  content: attr(data-progress);
+  font-size: 0.75em;
+  position: relative;
+  padding: 10px;
+}
+.languages{
+  margin: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  /* border: 1px solid var(--primary); */
+  padding: 7.5px 0;
+  border-radius: 25px;
+}
+.languages>span{
+  width: 30%;
+  height: max-content;
+  text-align: center;
+  padding: 5px;
+  border-radius: 20px;
+  font-size: 0.75em;
 }
 /* aboutMeSection */
 
@@ -704,6 +753,9 @@ nav {
   }
   .experienceBox > p > small {
     font-size: 0.8em;
+  }
+  .experienceBox>h1,.skillBox>h1{
+    margin-top: 25px;
   }
 }
 
