@@ -608,22 +608,58 @@ nav {
   margin-bottom: 10px;
   border-bottom: 1px solid var(--secondary);
 }
-.experienceBox > p{
+.experienceBox>.experiences> p{
   position: relative;
 }
-.experienceBox > p > span {
-  font-size: 0.9em;
+.experienceBox>.experiences > p > span {
+  font-size: 0.8em;
   font-weight: bold;
+  padding:  0 0 0 5px;
+}
+.experienceBox>.experiences > p > span>a{
+  text-decoration: none;
+  color: var(--hightlight);
+}
+.experiences{
+  /* border: 1px solid white; */
+  height: 220px;
+  overflow-y: scroll;
+}
+
+/* width */
+::-webkit-scrollbar {
+  cursor: pointer;
+  height: 5px;
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 30px;
+  background: rgba(128, 128, 128, 0.3);
+  transition: 0.5s ease-in-out;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.593);
+  cursor: pointer;
 }
 .date{
   display: inline-block;
   color: var(--secondary);
   width: 100px;
   border-right: 1px solid var(--secondary);
-  margin-right: 5px;
+  margin-right: 0px;
 }
-.experienceBox > p > small {
+.experienceBox >.experiences> p > small {
   font-size: 0.7em;
+  margin-left: 25px;
 }
 .skillBox{
   padding: 0 10px;
@@ -672,6 +708,42 @@ nav {
   padding: 5px;
   border-radius: 20px;
   font-size: 0.75em;
+}
+
+.aboutMeSection > div:last-child {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  overflow: hidden;
+}
+.card{
+  position: relative;
+  width: 100%;
+  height: 175px;
+  border: 1px solid rgba(255, 255, 255, 0.107);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+}
+.card::before,.card::after{
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  inset: 50%;
+  background: var(--primary);
+  border-radius: 100%;
+  filter: blur(50px);
+}
+.card::after{
+  inset: -10%;
+  filter: blur(100px);
+  background: var(--secondary);
+}
+.card:hover{
+  /* rotate: x 20deg; */
+  transform: perspective(100px);
 }
 /* aboutMeSection */
 
@@ -747,11 +819,10 @@ nav {
   .image2 > span {
     font-size: 0.8em;
   }
-
-  .experienceBox > p > span {
-    font-size: 1em;
+  .experienceBox>.experiences > p > span {
+    font-size: 0.9em;
   }
-  .experienceBox > p > small {
+  .experienceBox>.experiences > p > small {
     font-size: 0.8em;
   }
   .experienceBox>h1,.skillBox>h1{
