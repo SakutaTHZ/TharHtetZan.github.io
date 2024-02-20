@@ -760,14 +760,21 @@ nav {
   position: relative;
   display: flex;
   width: 100dvw;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 .workCard {
-  border: 1px solid rgba(255, 255, 255, 0.19);
+  scroll-snap-align: start;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   height: 100%;
   width: 25%;
   display: flex;
   flex-direction: column;
   padding: 10px;
+}
+.workCard:hover {
+  width: 40%;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3);
 }
 .workCard img {
   width: 90%;
@@ -786,15 +793,16 @@ nav {
   position: absolute;
   box-shadow: 0 0 10px var(--shadow);
   border-radius: 5px;
+  z-index: -2;
 }
 .workCard > .imageBox > img:nth-child(2) {
   scale: 0.5;
-  z-index: 1;
+  z-index: -1;
   transform: translateX(60%) translateY(-100%);
 }
 .workCard > .imageBox > img:nth-child(3) {
   scale: 0.5;
-  z-index: 1;
+  z-index: -1;
   transform: translateX(-60%) translateY(100%);
 }
 .workCard > .imageBox > img.mobileimage {
@@ -815,10 +823,20 @@ nav {
 .workCard > .imageBox {
   /* background: var(--secondary); */
 }
+.workInfo {
+  display: flex;
+  justify-content: flex-end;
+}
 .workInfo > button {
   width: 100%;
 }
 /* workSection */
+
+/* contsact Section */
+.contactSection {
+  flex-direction: column;
+}
+/* contsact Section */
 
 /* Mobile Adjustments */
 @media only screen and (max-width: 1000px) {
@@ -906,6 +924,9 @@ nav {
     display: block;
   }
   .workCard {
+    width: 100%;
+  }
+  .workCard:hover {
     width: 100%;
   }
 }
