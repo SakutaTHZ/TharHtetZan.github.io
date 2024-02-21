@@ -600,7 +600,13 @@ nav {
 .introBox {
   display: flex;
 }
-
+.exnSkill{
+  display: flex;
+  flex-direction: column;
+}
+.exnSkill>*{
+  width: 100%;
+}
 .experienceBox {
   padding: 10px;
 }
@@ -623,7 +629,7 @@ nav {
 }
 .experiences {
   /* border: 1px solid white; */
-  height: 220px;
+  height: 100%;
   overflow-y: scroll;
 }
 
@@ -752,6 +758,42 @@ nav {
   /* rotate: x 20deg; */
   transform: perspective(100px);
 }
+.aboutMeLast{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.languagesIDid,.appsIUsed{
+  /* height: 50%; */
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+}
+.languagesIDid>p,.appsIUsed>p{
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  gap: 3px;
+  font-size: 0.8em;
+  padding: 3px 5px;
+  box-shadow: 0 0 10px var(--shadow);
+  border-radius: 10px;
+}
+.clan{
+  background: linear-gradient(45deg, transparent, transparent,transparent);
+  transition: 0.5s ease-in-out,border 0s ease-in-out;
+}
+.clan:hover{
+  background: linear-gradient(45deg, var(--primary), var(--secondary),var(--hightlight));
+  border: 1px solid var(--background);
+}
 /* aboutMeSection */
 
 /* workSection */
@@ -771,8 +813,10 @@ nav {
   display: flex;
   flex-direction: column;
   padding: 10px;
+  opacity: .5;
 }
 .workCard:hover {
+  opacity: 1;
   width: 40%;
   box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3);
 }
@@ -829,6 +873,20 @@ nav {
 }
 .workInfo > button {
   width: 100%;
+}
+.workInfo>h3,.codeLanguage{
+  font-size: 1.5em;
+  background: linear-gradient(to right, var(--primary), var(--secondary),var(--hightlight));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.codeLanguage{
+  background: linear-gradient(-45deg, var(--secondary),var(--hightlight));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 1em;
 }
 /* workSection */
 
@@ -932,3 +990,16 @@ nav {
 }
 
 /* Mobile Adjustments */
+
+/* Desktop adjustments */
+@media screen and (min-width: 1500px) {
+  /* Your styles go here */
+  *{font-size: 1.05em;}
+  .myWorksSection{
+    font-size: 0.9em;
+  }
+  .workCard:hover {
+    font-size: 1.2em;
+  }
+}
+/* Desktop adjustments */
