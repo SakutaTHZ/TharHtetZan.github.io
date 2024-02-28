@@ -424,7 +424,9 @@ nav {
   overflow: hidden;
   transition: 0.5s ease-in-out, filter 3s ease-in-out;
 }
-
+.shinyButton > a {
+  text-decoration: none;
+}
 .shinyButton::before {
   content: "";
   position: absolute;
@@ -600,11 +602,11 @@ nav {
 .introBox {
   display: flex;
 }
-.exnSkill{
+.exnSkill {
   display: flex;
   flex-direction: column;
 }
-.exnSkill>*{
+.exnSkill > * {
   width: 100%;
 }
 .experienceBox {
@@ -758,14 +760,15 @@ nav {
   /* rotate: x 20deg; */
   transform: perspective(100px);
 }
-.aboutMeLast{
+.aboutMeLast {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
 }
-.languagesIDid,.appsIUsed{
+.languagesIDid,
+.appsIUsed {
   /* height: 50%; */
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -777,7 +780,8 @@ nav {
   gap: 10px;
   padding: 10px;
 }
-.languagesIDid>p,.appsIUsed>p{
+.languagesIDid > p,
+.appsIUsed > p {
   border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   gap: 3px;
@@ -786,12 +790,17 @@ nav {
   box-shadow: 0 0 10px var(--shadow);
   border-radius: 10px;
 }
-.clan{
-  background: linear-gradient(45deg, transparent, transparent,transparent);
-  transition: 0.5s ease-in-out,border 0s ease-in-out;
+.clan {
+  background: linear-gradient(45deg, transparent, transparent, transparent);
+  transition: 0.5s ease-in-out, border 0s ease-in-out;
 }
-.clan:hover{
-  background: linear-gradient(45deg, var(--primary), var(--secondary),var(--hightlight));
+.clan:hover {
+  background: linear-gradient(
+    45deg,
+    var(--primary),
+    var(--secondary),
+    var(--hightlight)
+  );
   border: 1px solid var(--background);
 }
 /* aboutMeSection */
@@ -813,7 +822,7 @@ nav {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  opacity: .5;
+  opacity: 0.5;
 }
 .workCard:hover {
   opacity: 1;
@@ -874,15 +883,21 @@ nav {
 .workInfo > button {
   width: 100%;
 }
-.workInfo>h3,.codeLanguage{
+.workInfo > h3,
+.codeLanguage {
   font-size: 1.5em;
-  background: linear-gradient(to right, var(--primary), var(--secondary),var(--hightlight));
+  background: linear-gradient(
+    to right,
+    var(--primary),
+    var(--secondary),
+    var(--hightlight)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-.codeLanguage{
-  background: linear-gradient(-45deg, var(--secondary),var(--hightlight));
+.codeLanguage {
+  background: linear-gradient(-45deg, var(--secondary), var(--hightlight));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -994,8 +1009,10 @@ nav {
 /* Desktop adjustments */
 @media screen and (min-width: 1500px) {
   /* Your styles go here */
-  *{font-size: 1.05em;}
-  .myWorksSection{
+  * {
+    font-size: 1.05em;
+  }
+  .myWorksSection {
     font-size: 0.9em;
   }
   .workCard:hover {
