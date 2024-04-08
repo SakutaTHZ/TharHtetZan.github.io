@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Salsa&display=swap");
+
+* {
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  color: var(--font-color);
+  font-family: var(--font-style1);
+}
+
+:root {
+  --background: #dbdbdb;
+  --bgline:#cbcbcb50;
+  --primary: #3b3486;
+  --hightlight: #f67701;
+  --secondary: #864af9;
+  --font-color: rgb(44, 44, 44);
+  --shadow: rgba(255, 255, 255, 0.3);
+  --font-style1: "Nunito", sans-serif;
+  --font-style2: "Salsa", cursive;
+}
+
+/* body & sections */
+html {
+  scroll-behavior: smooth;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+body {
+  background-color: var(--background);
+  overflow: hidden;
+  background-image: linear-gradient(to right, var(--bgline) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--bgline) 1px, transparent 1px);
+  background-size: 4vh 4vh;
+}
+
+section {
+  scroll-snap-align: start;
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.trailer{
+    display: flex;
+    height: 20px;
+    width: 20px;
+    background: var(--hightlight);
+    border-radius: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    pointer-events: none;
+    opacity: 0;
+    transition: .5s ease;
+}
+.trailer > span{
+    font-size: 5px;
+    color: var(--background);
+}
+body:hover > .trailer{
+    opacity: 1;
+}
+
+/* nav Box starts */
+nav {
+  /* border: 1px solid white; */
+  width: 100%;
+  height: auto;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.hugeTitle {
+  font-size: calc(.5vw + 2vh);
+  font-weight: bolder;
+}
+.world {
+  display: inline-block;
+  margin: 0;
+  color: var(--hightlight);
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  animation: 3s pulsing linear alternate infinite;
+}
+
+.switchBox{
+    position: relative;
+    width: 40px;
+    height: 20px;
+    border: 1px solid var(--font-color);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4px;
+}
+.switchBox:hover{
+    cursor: pointer;
+}
+.switchBox>span{
+    color: var(--font-color);
+    font-size: 12px;
+}
+.switchBox>.switch{
+    position: absolute;
+    left: 0;
+    height: 20px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: var(--hightlight);
+    border: 1px solid var(--font-color);
+    transition: 0.5s ease-in-out;
+}
+.switchBox>.switch.on{
+    left: 20px;
+}
+/* nav Box ends */
+
+/* Animations */
+@keyframes pulsing {
+    from{
+        filter: drop-shadow(0 0 0px var(--hightlight));
+    }to{
+        filter: drop-shadow(0 0 1px var(--hightlight));
+    }
+}
+
+/* Media Query Section */
+
+/* Laptop/Desktop */
+@media screen and (min-width: 1024px) {
+  .imageBox {
+    right: 0;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+}
