@@ -11,7 +11,7 @@
 
 :root {
   --background: #dbdbdb;
-  --bgline:#cbcbcb50;
+  --bgline: #cbcbcb50;
   --primary: #3b3486;
   --hightlight: #f67701;
   --secondary: #864af9;
@@ -27,17 +27,17 @@ html {
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
 body {
   background-color: var(--background);
   overflow: hidden;
-  background-image: linear-gradient(to right, var(--bgline) 1px, transparent 1px),
+  background-image: linear-gradient(
+      to right,
+      var(--bgline) 1px,
+      transparent 1px
+    ),
     linear-gradient(to bottom, var(--bgline) 1px, transparent 1px);
   background-size: 4vh 4vh;
 }
@@ -51,36 +51,6 @@ section {
   align-items: flex-start;
 }
 
-.trailer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2px;
-    min-height: 10px;
-    min-width: 10px;
-    padding: 3px 5px;
-    background: var(--hightlight);
-    border-radius: 20px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 10000;
-    pointer-events: none;
-    opacity: 0;
-    transition: .5s ease;
-}
-.trailer > span{
-    font-size: 8px;
-    color: var(--background);
-}
-.trailer >p {
-  font-size: 5px;
-  color: var(--background);
-}
-body:hover > .trailer{
-    opacity: 1;
-}
-
 /* nav Box starts */
 nav {
   /* border: 1px solid white; */
@@ -91,7 +61,7 @@ nav {
   justify-content: space-between;
 }
 .hugeTitle {
-  font-size: calc(.5vw + 2vh);
+  font-size: calc(0.5vw + 2vh);
   font-weight: bolder;
 }
 .world {
@@ -104,45 +74,46 @@ nav {
   animation: 3s pulsing linear alternate infinite;
 }
 
-.switchBox{
-    position: relative;
-    width: 40px;
-    height: 20px;
-    border: 1px solid var(--font-color);
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 4px;
+.switchBox {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  border: 1px solid var(--font-color);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4px;
 }
-.switchBox:hover{
-    cursor: pointer;
+.switchBox:hover {
+  cursor: pointer;
 }
-.switchBox>span{
-    color: var(--font-color);
-    font-size: 12px;
+.switchBox > span {
+  color: var(--font-color);
+  font-size: 12px;
 }
-.switchBox>.switch{
-    position: absolute;
-    left: 0;
-    height: 20px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    background: var(--hightlight);
-    border: 1px solid var(--font-color);
-    transition: 0.5s ease-in-out;
+.switchBox > .switch {
+  position: absolute;
+  left: 0;
+  height: 20px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: var(--hightlight);
+  border: 1px solid var(--font-color);
+  transition: 0.5s ease-in-out;
 }
-.switchBox>.switch.on{
-    left: 20px;
+.switchBox > .switch.on {
+  left: 20px;
 }
 /* nav Box ends */
 
 /* Animations */
 @keyframes pulsing {
-    from{
-        filter: drop-shadow(0 0 0px var(--hightlight));
-    }to{
-        filter: drop-shadow(0 0 1px var(--hightlight));
-    }
+  from {
+    filter: drop-shadow(0 0 0px var(--hightlight));
+  }
+  to {
+    filter: drop-shadow(0 0 1px var(--hightlight));
+  }
 }
 
 /* Media Query Section */
