@@ -71,7 +71,7 @@ const animateTrailer = (e, interacting) => {
     y = e.clientY - trailer.offsetHeight / 2;
 
   const keyframes = {
-    transform: `translate(${x}px,${y}px) scale(${interacting ? 8 : 1})`,
+    transform: `translate(${x}px,${y}px) scale(${interacting ? 3  : 1})`,
   };
 
   trailer.animate(keyframes, {
@@ -80,23 +80,27 @@ const animateTrailer = (e, interacting) => {
   });
 };
 
-const getTrailerClass = (type) => {
-  switch (type) {
-    case "profile":
-      return "person";
-    default:
-      return "toggle_on";
-  }
-};
-
 window.onmousemove = (e) => {
   const interactable = e.target.closest(".interactable"),
     interacting = interactable !== null;
 
-  animateTrailer(e, interacting);
+  animateTrailer(e, interacting)
 
-  const icon = document.querySelector(".trailer>span");
+  const trailer = document.querySelector(".trailer")
+  const icon = document.querySelector(".trailer>span")
+  const text = document.querySelector(".trailer>p")
   if (interacting) {
-    icon.innerText = getTrailerClass(interactable.dataset.type);
+    if((trailer.offsetWidth + e.clientX + 20) > window.innerWidth){
+      trailer.style.transformOrigin = "top right"
+    }else{
+      trailer.style.transformOrigin = "top left"
+    }
+    icon.innerText = interactable.dataset.type
+    text.innerText = interactable.dataset.text
+  }else{
+    icon.innerText = ""
+    text.innerText = ""
   }
+
+  // console.log(`mouseX - ${e.clientX}\nmouseY - ${e.clientY}\nWidth - ${trailer.offsetWidth + e.clientX + 20}\nWindow ${window.innerWidth}`)
 };

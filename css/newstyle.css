@@ -53,8 +53,12 @@ section {
 
 .trailer{
     display: flex;
-    height: 20px;
-    width: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    min-height: 10px;
+    min-width: 10px;
+    padding: 3px 5px;
     background: var(--hightlight);
     border-radius: 20px;
     position: fixed;
@@ -66,8 +70,12 @@ section {
     transition: .5s ease;
 }
 .trailer > span{
-    font-size: 5px;
+    font-size: 8px;
     color: var(--background);
+}
+.trailer >p {
+  font-size: 5px;
+  color: var(--background);
 }
 body:hover > .trailer{
     opacity: 1;
