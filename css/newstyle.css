@@ -51,6 +51,87 @@ section {
   align-items: flex-start;
 }
 
+/* Intro Box => */
+.introBox{
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100dvw;
+  height: 100dvh;
+  background: var(--background);
+  z-index: 9999;
+  transition: 0.5s ease-in-out;
+}
+.introBox.remove{
+  transform: translateY(-100%);
+}
+.introBox>.CTC{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+.introBox>.CTC>.pulseBox{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: var(--font-color);
+}
+.introBox>.CTC>.pulseBox::before,.introBox>.CTC>.pulseBox::after{
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  width: 90%;
+  height: 90%;
+  border: 1px solid var(--font-color);
+  animation: 3s pulsinglight linear infinite;
+}
+.introBox>.CTC>.pulseBox::after{
+  animation-delay: 1.5s;
+}
+.introBox>.box{
+  background: var(--hightlight);
+  border: 3px solid var(--hightlight);
+  outline: 3px solid var(--hightlight);
+  width: 0%;
+  height: calc(100%/3);
+  transition: 0.5s ease-in-out;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-500px);
+}
+.introBox>.box.moveleft{
+  transform: translateX(0px);
+  width: 100%;
+}
+.introBox>.box.moveright{
+  transform: translateX(110%);
+}
+.introBox>.box>.counter{
+  color: var(--background);
+  font-family: var(--font-style2);
+  font-size: calc(15vw + 2vh);;
+}
+@keyframes pulsinglight {
+  from{
+    transform: scale(1);
+    opacity: 1;
+  }to{
+    transform: scale(2.1);
+    opacity: 0;
+  }
+}
+/* <= Intro Box */
+
 /* nav Box starts */
 nav {
   /* border: 1px solid white; */
@@ -59,6 +140,10 @@ nav {
   padding: 10px 30px;
   display: flex;
   justify-content: space-between;
+  transition: 0.5s ease-in-out;
+}
+nav.hold{
+  transform: translate(0,-100px);
 }
 .hugeTitle {
   font-size: calc(0.5vw + 2vh);

@@ -4,7 +4,6 @@
 // [data-type] is for the icon name (I used Google icons in this script)
 // [data-text] is for the subtitle 
 
-// Create a div element with the provided HTML content
 const trailerDiv = document.createElement("div");
 trailerDiv.classList.add("trailer");
 trailerDiv.innerHTML = `
@@ -12,13 +11,10 @@ trailerDiv.innerHTML = `
         <p></p>
     `;
 
-// Append the created div to the document body or another container
 document.querySelector("body").appendChild(trailerDiv);
 
-// Create a style element
 const styleElement = document.createElement("style");
 
-// Set the CSS content
 styleElement.textContent = `
     .trailer {
         display: flex;
@@ -69,12 +65,13 @@ const animateTrailer = (e, interacting) => {
   };
 
   trailer.animate(keyframes, {
-    duration: 800,
+    duration: 400,
     fill: "forwards",
   });
 };
 
 window.onmousemove = (e) => {
+
   const interactable = e.target.closest(".interactable"),
     interacting = interactable !== null;
 
@@ -83,18 +80,20 @@ window.onmousemove = (e) => {
   const trailer = document.querySelector(".trailer");
   const icon = document.querySelector(".trailer>span");
   const text = document.querySelector(".trailer>p");
-  if (interacting) {
+  if (interacting) {     
     if (trailer.offsetWidth + e.clientX + 20 > window.innerWidth) {
       trailer.style.transformOrigin = "center right";
-    } else {
+    } else if(e.clientX - (trailer.offsetWidth +30) < 0) {  
       trailer.style.transformOrigin = "center left";
+    } else{
+      trailer.style.transformOrigin = "center center";
     }
-    icon.innerHTML = interactable.dataset.type;
-    text.innerHTML = interactable.dataset.text;
+    icon.innerHTML = interactable.dataset.type ? interactable.dataset.type : "";
+    text.innerHTML = interactable.dataset.text ? interactable.dataset.text : "";
   } else {
     icon.innerHTML = "";
     text.innerHTML = "";
   }
 
-  // console.log(`mouseX - ${e.clientX}\nmouseY - ${e.clientY}\nWidth - ${trailer.offsetWidth + e.clientX + 20}\nWindow ${window.innerWidth}`)
+  // console.log(`mouseX - ${e.clientX}\nmouseY - ${e.clientY}\nWidth - ${e.clientX - (trailer.offsetWidth +30)}\nWindow ${window.innerWidth}`)
 };

@@ -63,3 +63,43 @@ const loadStoredColor = () => {
 };
 
 loadStoredColor();
+
+// For intro
+const clickIntro = document.querySelector(".CTC");
+clickIntro.addEventListener("click", () => {
+  const elements = document.querySelectorAll(".box");
+  const counterBox = document.querySelector(".introBox>.box>.counter");
+  let currentIndex = 0;
+
+  setInterval(() => {
+    elements[currentIndex].classList.add("moveleft");
+    currentIndex = (currentIndex + 1) % elements.length;
+  }, 750);
+
+  clickIntro.style.opacity = 0
+
+  let counter = 0;
+  setTimeout(() => {
+    const intervalId = setInterval(() => {
+      counterBox.innerHTML = counter++;
+      if (counter === 4) {
+        clearInterval(intervalId);
+        counterBox.innerHTML = "Welcome";
+      }
+    }, 750);
+  }, 2500);
+
+  setTimeout(() => {
+    setInterval(() => {
+      elements[currentIndex].classList.add("moveright");
+      currentIndex = (currentIndex + 1) % elements.length;
+    }, 750);
+    setTimeout(()=>{
+      document.querySelector(".introBox").classList.add('remove')
+      
+      setTimeout(() => {
+        document.querySelector("nav").classList.remove('hold')
+      }, 1000);
+    },3000)
+  }, 6000);
+});
