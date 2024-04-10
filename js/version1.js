@@ -1,7 +1,7 @@
 const themeColors = {
   dark: {
     "--background": "#101010",
-    "--bgline": "#33333350",
+    "--bgline": "#33333330",
     "--primary": "#3b3486",
     "--hightlight": "#f8e559",
     "--secondary": "#864af9",
