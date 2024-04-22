@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&family=Salsa&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 
 * {
   margin: 0;
@@ -18,7 +19,11 @@
   --font-color: rgb(44, 44, 44);
   --shadow: rgba(255, 255, 255, 0.3);
   --font-style1: "Nunito", sans-serif;
-  --font-style2: "Salsa", cursive;
+  --font-style2: "Jersey 10", sans-serif;
+  --brightness: brightness(.3);
+
+  --normal-fontSize:calc(.1vw + 2vh);
+  --title-fontsize:calc(2vw + 2vh);
 }
 
 /* body & sections */
@@ -32,7 +37,7 @@ html {
 
 body {
   background-color: var(--background);
-  overflow: hidden;
+  /* overflow: hidden; */
   background-image: linear-gradient(
       to right,
       var(--bgline) 1px,
@@ -40,6 +45,9 @@ body {
     ),
     linear-gradient(to bottom, var(--bgline) 1px, transparent 1px);
   background-size: 4vh 4vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
 }
 
 section {
@@ -48,7 +56,30 @@ section {
   height: 100dvh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+}
+
+/* Custom scroll bar */
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--hightlight);
+  border-radius: 10px;
+  opacity: .5;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hightlight);
 }
 
 /* Intro Box => */
@@ -136,8 +167,10 @@ section {
 /* nav Box starts */
 nav {
   /* border: 1px solid white; */
+  position: fixed;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 40px;
   padding: 10px 30px;
   display: flex;
   justify-content: space-between;
@@ -145,6 +178,9 @@ nav {
 }
 nav.hold{
   transform: translate(0,-100px);
+}
+nav.unhold{
+  transform: translate(0,0);
 }
 .hugeTitle {
   font-size: calc(0.5vw + 2vh);
@@ -200,11 +236,10 @@ nav.hold{
   align-items: center;
   bottom: 20px;
   left: 20px;
-  width: 10px;
-  height: 50px;
-  /* border: .5px double var(--font-color); */
+  width: 20px;
+  height: 40px;
+  border: .5px solid var(--hightlight);
   border-radius: 10px;
-  animation: 3s scrolling linear alternate infinite;
 }
 .scrollable::before{
   content: '';
@@ -217,12 +252,80 @@ nav.hold{
 }
 /* Scrollable ends */
 
+/* Image Box starts */
+.intro{
+  overflow: hidden;
+}
+/* Image Box Ends */
+.dataBox{
+  position: absolute;
+  /* border: 1px solid white; */
+  padding: 20px;
+}
+.dataBox>h1{
+  font-size: var(--title-fontsize);
+  padding-bottom: 30px;
+}
+.dataBox>p{
+  font-size: var(--normal-fontSize);
+}
+.iconBox{
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  padding-top: 30px;
+}
+.iconBox>ion-icon{
+  font-size: 1.5em;
+}
+
+/* Testing */
+
+.marquee{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: var(--hightlight);
+  
+  p,span{
+    font-size: var(--title-fontsize);
+   color: var(--background);
+  }
+
+  .marquee_contentBox{
+    margin-left: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--title-fontsize);
+
+    .marquee_content{
+      display: flex;
+      align-items: center;
+      gap: var(--title-fontsize);
+
+      p{
+        font-family: var(--font-style2);
+      }
+      span{
+        rotate: 0deg;
+        transition: 0.5s ease-in-out;
+      }
+      span.active{
+        rotate: 180deg;
+      }
+    }
+  }
+}
+
+
 /* Animations */
 @keyframes scrolling {
   from{
-    transform: translateY(-15px);
+    transform: translateY(-5px);
   }to{
-    transform: translateY(15px);
+    transform: translateY(5px);
   }
 }
 @keyframes pulsing {
@@ -238,8 +341,12 @@ nav.hold{
 
 /* Laptop/Desktop */
 @media screen and (min-width: 1024px) {
-  .imageBox {
-    right: 0;
+  .dataBox{
+    padding-right: 60px;
+    border-right: 0;
+    right: -10px;
+    width: 40%;
+    /* border-radius: 20px 0 0 20px; */
   }
 }
 
@@ -249,4 +356,11 @@ nav.hold{
 
 /* Mobile */
 @media screen and (max-width: 767px) {
+  .dataBox{
+    border: 0;
+    bottom: 10%;
+  }
+  .dataBox>h1{
+    font-size: 2.5em;
+  }
 }

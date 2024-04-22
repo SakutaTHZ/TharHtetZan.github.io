@@ -7,6 +7,7 @@ const themeColors = {
     "--secondary": "#864af9",
     "--font-color": "rgb(225, 225, 225)",
     "--shadow": "rgba(0, 0, 0, 0.3)",
+    "--brightness": "brightness(.4)"
   },
   light: {
     "--background": "#e9e9e9",
@@ -16,6 +17,7 @@ const themeColors = {
     "--secondary": "#864af9",
     "--font-color": "rgb(44, 44, 44)",
     "--shadow": "rgba(255, 255, 255, 0.3)",
+    "--brightness": "brightness(.8)"
   },
 };
 
@@ -100,6 +102,10 @@ clickIntro.addEventListener("click", () => {
       setTimeout(() => {
         document.querySelector("nav").classList.remove('hold')
       }, 1000);
+
+      if (!isMobileWidth()) {
+        loadIntroText()
+      }
     },3000)
   }, 6000);
 });

@@ -12,9 +12,10 @@
     />
     <script src="js/version1.js" defer></script>
     <script src="js/HintCursor.js" defer></script>
+    <script src="js/gsap.js"></script>
   </head>
   <body>
-
+    <!-- Intro Sequence -->
     <div class="introBox">
       <div class="box"></div>
       <div class="box">
@@ -27,19 +28,106 @@
       </div>
     </div>
 
-    <div class="scrollable interactable" data-type="unfold_more" data-text="Scroll Up/Down">
-    </div>
+    <!-- Scroll Hint -->
+    <div
+      class="scrollable interactable"
+      data-type="unfold_more"
+      data-text="Scroll Up/Down"
+    ></div>
 
-    <nav class="hold">
-      <p class="hugeTitle interactable" data-type="person" data-text="You can call me <b>[Thar Htet]"><span class="world">Thar Htet</span> Zan</p>
-      <div class="switchBox interactable" data-type="lightbulb"  data-text="Change Dark/Light Mode">
+    <!-- Nav Bar -->
+    <nav class="hold unhold">
+      <p
+        class="hugeTitle interactable"
+        data-type="person"
+        data-text="You can call me <b>[Thar Htet]"
+      >
+        <span class="world">Thar Htet</span> Zan
+      </p>
+      <div
+        class="switchBox interactable"
+        data-type="lightbulb"
+        data-text="Change Dark/Light Mode"
+      >
         <span class="material-symbols-outlined"> light_mode </span>
         <span class="material-symbols-outlined"> dark_mode </span>
         <div class="switch"></div>
       </div>
     </nav>
 
+    <!-- intro Section -->
     <section class="intro">
+      <div class="dataBox">
+        <h1>Hi, I'm <span class="world">Thar Htet</span> Zan</h1>
+        <p>
+          I am a Software Developer 💻 mainly focusing on UI/UX and frontend
+          developement because I LOVE creating interesting Concepts and Ideas.
+          😉
+        </p>
+        <div class="iconBox">
+          <ion-icon name="logo-facebook"></ion-icon>
+          <ion-icon name="logo-instagram"></ion-icon>
+          <ion-icon name="logo-google"></ion-icon>
+          <ion-icon name="logo-github"></ion-icon>
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </div>
+      </div>
+
+      <div class="marquee">
+        <div class="marquee_contentBox">
+          <div class="marquee_content">
+            <p>Thinker</p>
+            <span class="material-symbols-outlined"> east </span>
+          </div>
+
+          <div class="marquee_content">
+            <p>Creator</p>
+            <span class="material-symbols-outlined"> east </span>
+          </div>
+
+          <div class="marquee_content">
+            <p>Artist</p>
+            <span class="material-symbols-outlined"> east </span>
+          </div>
+
+          <div class="marquee_content">
+            <p>Coder</p>
+            <span class="material-symbols-outlined"> east </span>
+          </div>
+          
+          <div class="marquee_content">
+            <p>Developer</p>
+            <span class="material-symbols-outlined"> east </span>
+          </div>
+
+          <div class="marquee_content">
+            <p>Designer</p>
+          </div>
+          
+        </div>
+      </div>
     </section>
+
+    <section>
+      <div class="testingBox">
+        <ion-icon name="logo-github"></ion-icon>
+      </div>
+    </section>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
   </body>
 </html>
