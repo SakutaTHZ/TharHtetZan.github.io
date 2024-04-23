@@ -246,6 +246,8 @@ nav.unhold{
   height: 40px;
   border: .5px solid var(--hightlight);
   border-radius: 10px;
+  mix-blend-mode: difference;
+  z-index: 2;
 }
 .scrollable::before{
   content: '';
@@ -299,7 +301,6 @@ nav.unhold{
   }
 
   .marquee_contentBox{
-    margin-left: 200px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -354,6 +355,9 @@ nav.unhold{
     width: 40%;
     /* border-radius: 20px 0 0 20px; */
   }
+  .marquee_contentBox{
+    margin-left: 200px;
+  }
 }
 
 /* Tablet */
@@ -368,5 +372,8 @@ nav.unhold{
   }
   .dataBox>h1{
     font-size: 2.5em;
+  }
+  .marquee_contentBox{
+    margin-left: 50px;
   }
 }

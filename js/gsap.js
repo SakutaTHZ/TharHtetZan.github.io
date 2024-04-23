@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     })
 
     tl.to(".marquee_contentBox", {
-        x:-(window.innerWidth>500 ? 300 : 650),
+        x:-(window.innerWidth>500 ? 300 : 500),
         duration: 5
     })
     tl2.to(".marquee", {
