@@ -27,8 +27,8 @@
 }
 
 /* body & sections */
-html {
-  scroll-behavior: smooth;
+html{
+  overflow-x: hidden;
 }
 
 .material-symbols-outlined {
@@ -36,6 +36,9 @@ html {
 }
 
 body {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
   background-color: var(--background);
   /* overflow: hidden; */
   background-image: linear-gradient(
@@ -48,15 +51,17 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  overflow: hidden;
 }
 
 section {
-  scroll-snap-align: start;
-  width: 100dvw;
-  height: 100dvh;
+  position: relative;
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background: #3b3486; */
 }
 
 /* Custom scroll bar */
@@ -254,7 +259,7 @@ nav.unhold{
 
 /* Image Box starts */
 .intro{
-  overflow: hidden;
+  position: relative;
 }
 /* Image Box Ends */
 .dataBox{

@@ -102,10 +102,6 @@ clickIntro.addEventListener("click", () => {
       setTimeout(() => {
         document.querySelector("nav").classList.remove('hold')
       }, 1000);
-
-      if (!isMobileWidth()) {
-        loadIntroText()
-      }
     },3000)
   }, 6000);
 });

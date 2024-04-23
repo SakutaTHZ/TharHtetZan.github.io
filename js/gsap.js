@@ -27,13 +27,3 @@ document.addEventListener("DOMContentLoaded", (event) => {
         duration: 3
     })
 });
-
-const loadIntroText = ()=>{
-    gsap.to(".dataBox", {
-        scrollTrigger:{
-            trigger: ".dataBox",
-        },
-        x:-100,
-        duration: 2
-    })
-}
