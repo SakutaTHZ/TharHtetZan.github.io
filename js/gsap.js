@@ -18,6 +18,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
         },
     })
 
+    let leftBarMoving = gsap.timeline({scrollTrigger:{
+        trigger:".leftBar",
+        start: "-200px center",
+        markers: true,
+        end: ()=> "+="+(document.querySelector('.marquee').offsetHeight+500),
+        scrub:1,
+    }
+    })
+
     tl.to(".marquee_contentBox", {
         x:-(window.innerWidth>500 ? 300 : 500),
         duration: 5
@@ -25,5 +34,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     tl2.to(".marquee", {
         rotate:-4,
         duration: 3
+    })
+    leftBarMoving.to(".leftBar",{
+        y:"50px",
+        x:-(window.innerWidth),
+        duration:5
     })
 });

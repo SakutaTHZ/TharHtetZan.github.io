@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&family=Salsa&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jersey+10&display=swap");
 
 * {
   margin: 0;
@@ -20,14 +20,14 @@
   --shadow: rgba(255, 255, 255, 0.3);
   --font-style1: "Nunito", sans-serif;
   --font-style2: "Jersey 10", sans-serif;
-  --brightness: brightness(.3);
+  --brightness: brightness(0.3);
 
-  --normal-fontSize:calc(.1vw + 2vh);
-  --title-fontsize:calc(2vw + 2vh);
+  --normal-fontSize: calc(0.1vw + 2vh);
+  --title-fontsize: calc(2vw + 2vh);
 }
 
 /* body & sections */
-html{
+html {
   overflow-x: hidden;
 }
 
@@ -79,7 +79,7 @@ section {
 ::-webkit-scrollbar-thumb {
   background: var(--hightlight);
   border-radius: 10px;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 /* Handle on hover */
@@ -88,7 +88,7 @@ section {
 }
 
 /* Intro Box => */
-.introBox{
+.introBox {
   position: fixed;
   inset: 0;
   display: flex;
@@ -101,16 +101,16 @@ section {
   z-index: 9999;
   transition: 0.5s ease-in-out;
 }
-.introBox.remove{
+.introBox.remove {
   transform: translateY(-100%);
 }
-.introBox>.CTC{
+.introBox > .CTC {
   position: absolute;
   width: 100%;
   display: flex;
   gap: 10px;
 }
-.introBox>.CTC>.pulseBox{
+.introBox > .CTC > .pulseBox {
   position: relative;
   display: flex;
   justify-content: center;
@@ -121,8 +121,9 @@ section {
   background: var(--font-color);
   transform-origin: center;
 }
-.introBox>.CTC>.pulseBox::before,.introBox>.CTC>.pulseBox::after{
-  content: '';
+.introBox > .CTC > .pulseBox::before,
+.introBox > .CTC > .pulseBox::after {
+  content: "";
   position: absolute;
   border-radius: 50%;
   width: 90%;
@@ -130,15 +131,15 @@ section {
   border: 1px solid var(--font-color);
   animation: 3s pulsinglight linear infinite;
 }
-.introBox>.CTC>.pulseBox::after{
+.introBox > .CTC > .pulseBox::after {
   animation-delay: 1.5s;
 }
-.introBox>.box{
+.introBox > .box {
   background: var(--hightlight);
   border: 3px solid var(--hightlight);
   outline: 3px solid var(--hightlight);
   width: 0%;
-  height: calc(100%/3);
+  height: calc(100% / 3);
   transition: 0.5s ease-in-out;
   z-index: 10000;
   display: flex;
@@ -146,23 +147,24 @@ section {
   align-items: center;
   transform: translateX(-500px);
 }
-.introBox>.box.moveleft{
+.introBox > .box.moveleft {
   transform: translateX(0px);
   width: 100%;
 }
-.introBox>.box.moveright{
+.introBox > .box.moveright {
   transform: translateX(110%);
 }
-.introBox>.box>.counter{
+.introBox > .box > .counter {
   color: var(--background);
   font-family: var(--font-style2);
-  font-size: calc(15vw + 2vh);;
+  font-size: calc(15vw + 2vh);
 }
 @keyframes pulsinglight {
-  from{
+  from {
     transform: scale(1);
     opacity: 1;
-  }to{
+  }
+  to {
     transform: scale(2.1);
     opacity: 0;
   }
@@ -182,11 +184,11 @@ nav {
   transition: 0.5s ease-in-out;
   z-index: 2;
 }
-nav.hold{
-  transform: translate(0,-100px);
+nav.hold {
+  transform: translate(0, -100px);
 }
-nav.unhold{
-  transform: translate(0,0);
+nav.unhold {
+  transform: translate(0, 0);
 }
 .hugeTitle {
   font-size: calc(0.5vw + 2vh);
@@ -235,7 +237,7 @@ nav.unhold{
 /* nav Box ends */
 
 /* Scrollable starts */
-.scrollable{
+.scrollable {
   position: fixed;
   display: flex;
   justify-content: center;
@@ -244,13 +246,13 @@ nav.unhold{
   left: 20px;
   width: 20px;
   height: 40px;
-  border: .5px solid var(--hightlight);
+  border: 0.5px solid var(--hightlight);
   border-radius: 10px;
   mix-blend-mode: difference;
   z-index: 2;
 }
-.scrollable::before{
-  content: '';
+.scrollable::before {
+  content: "";
   position: absolute;
   width: 3px;
   height: 10px;
@@ -261,77 +263,103 @@ nav.unhold{
 /* Scrollable ends */
 
 /* Image Box starts */
-.intro{
+.intro {
   position: relative;
 }
 /* Image Box Ends */
-.dataBox{
+.dataBox {
   position: absolute;
   /* border: 1px solid white; */
   padding: 20px;
 }
-.dataBox>h1{
+.dataBox > h1 {
   font-size: var(--title-fontsize);
   padding-bottom: 30px;
 }
-.dataBox>p{
+.dataBox > p {
   font-size: var(--normal-fontSize);
 }
-.iconBox{
+.iconBox {
   display: flex;
   justify-content: flex-start;
   gap: 10px;
   padding-top: 30px;
 }
-.iconBox>ion-icon{
+.iconBox > ion-icon {
   font-size: 1.5em;
 }
 
 /* Testing */
 
-.marquee{
+.marquee {
   position: absolute;
   bottom: 0;
   width: 100%;
   background: var(--hightlight);
-  
-  p,span{
+  z-index: 10;
+
+  p,
+  span {
     font-size: var(--title-fontsize);
-   color: var(--background);
+    color: var(--background);
   }
 
-  .marquee_contentBox{
+  .marquee_contentBox {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: var(--title-fontsize);
 
-    .marquee_content{
+    .marquee_content {
       display: flex;
       align-items: center;
       gap: var(--title-fontsize);
 
-      p{
+      p {
         font-family: var(--font-style2);
       }
-      span{
+      span {
         rotate: 0deg;
         transition: 0.5s ease-in-out;
       }
-      span.active{
+      span.active {
         rotate: 180deg;
       }
     }
   }
 }
-
+.tank {
+  position: fixed;
+  inset: 0;
+  width: 100dvw;
+  height: 100dvh;
+  z-index: -100;
+}
+.lightbulb {
+  position: fixed;
+  height: 30dvh;
+  aspect-ratio: 1;
+  background: var(--hightlight);
+  border-radius: 30% 40% 60% 30%;
+  filter: blur(100px) opacity(0.3);
+  transition: 2s ease-in-out;
+}
+.leftBar {
+  position: absolute;
+  right: 0;
+  top: -50px;
+  height: 100%;
+  width: 100px;
+  background: var(--hightlight);
+}
 
 /* Animations */
 @keyframes scrolling {
-  from{
+  from {
     transform: translateY(-5px);
-  }to{
+  }
+  to {
     transform: translateY(5px);
   }
 }
@@ -348,14 +376,14 @@ nav.unhold{
 
 /* Laptop/Desktop */
 @media screen and (min-width: 1024px) {
-  .dataBox{
+  .dataBox {
     padding-right: 60px;
     border-right: 0;
     right: -10px;
     width: 40%;
     /* border-radius: 20px 0 0 20px; */
   }
-  .marquee_contentBox{
+  .marquee_contentBox {
     margin-left: 200px;
   }
 }
@@ -366,14 +394,14 @@ nav.unhold{
 
 /* Mobile */
 @media screen and (max-width: 767px) {
-  .dataBox{
+  .dataBox {
     border: 0;
     bottom: 10%;
   }
-  .dataBox>h1{
+  .dataBox > h1 {
     font-size: 2.5em;
   }
-  .marquee_contentBox{
+  .marquee_contentBox {
     margin-left: 50px;
   }
 }

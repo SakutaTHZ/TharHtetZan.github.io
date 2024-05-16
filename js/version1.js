@@ -7,7 +7,7 @@ const themeColors = {
     "--secondary": "#864af9",
     "--font-color": "rgb(225, 225, 225)",
     "--shadow": "rgba(0, 0, 0, 0.3)",
-    "--brightness": "brightness(.4)"
+    "--brightness": "brightness(.4)",
   },
   light: {
     "--background": "#e9e9e9",
@@ -17,7 +17,7 @@ const themeColors = {
     "--secondary": "#864af9",
     "--font-color": "rgb(44, 44, 44)",
     "--shadow": "rgba(255, 255, 255, 0.3)",
-    "--brightness": "brightness(.8)"
+    "--brightness": "brightness(.8)",
   },
 };
 
@@ -78,7 +78,7 @@ clickIntro.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % elements.length;
   }, 750);
 
-  clickIntro.style.opacity = 0
+  clickIntro.style.opacity = 0;
 
   let counter = 0;
   setTimeout(() => {
@@ -96,12 +96,64 @@ clickIntro.addEventListener("click", () => {
       elements[currentIndex].classList.add("moveright");
       currentIndex = (currentIndex + 1) % elements.length;
     }, 750);
-    setTimeout(()=>{
-      document.querySelector(".introBox").classList.add('remove')
-      
+    setTimeout(() => {
+      document.querySelector(".introBox").classList.add("remove");
+
       setTimeout(() => {
-        document.querySelector("nav").classList.remove('hold')
+        document.querySelector("nav").classList.remove("hold");
       }, 1000);
-    },3000)
+    }, 3000);
   }, 6000);
 });
+
+const animatedDiv = document.querySelector(".lightbulb");
+
+const getRandomPercentage=() =>{
+  return Math.floor(Math.random() * 100) + "%";
+}
+
+const getRandomPosition=(maxValue) =>{
+  return Math.floor(Math.random() * maxValue) + "px";
+}
+
+const setBulbSize = () =>{
+  return Math.floor(Math.random() * 41) + 10 + 'vh';
+}
+const getRandomBlurValue=()=> {
+  return Math.floor(Math.random() * 101) + 50 + 'px';
+}
+
+function changeBorderRadiusAndPosition() {
+  const borderRadius = `${getRandomPercentage()} ${getRandomPercentage()} ${getRandomPercentage()} ${getRandomPercentage()}`;
+  animatedDiv.style.borderRadius = borderRadius;
+
+  let bulbSize = setBulbSize()
+  animatedDiv.style.width = bulbSize
+  animatedDiv.style.height = bulbSize
+
+  const maxWidth = window.innerWidth - 200;
+  const maxHeight = window.innerHeight - 200;
+
+  const top = getRandomPosition(maxHeight);
+  const left = getRandomPosition(maxWidth);
+  animatedDiv.style.top = top;
+  animatedDiv.style.left = left;
+  
+  const blurValue = getRandomBlurValue();
+  animatedDiv.style.filter = `blur(${blurValue}) opacity(.3)`;
+}
+
+setInterval(changeBorderRadiusAndPosition, 4000);
+
+changeBorderRadiusAndPosition();
+
+const defaultSize = document.querySelector(".marquee")
+console.log(defaultSize.offsetHeight)
+const setSizes = () =>{
+  const leftBar=document.querySelector(".leftBar")
+  console.log(leftBar.offsetWidth)
+  leftBar.style.width=defaultSize.offsetHeight + "px"
+  console.log(leftBar.offsetWidth)
+}
+
+setSizes()
