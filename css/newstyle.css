@@ -348,9 +348,17 @@ nav.unhold {
 .leftBar {
   position: absolute;
   right: 0;
-  top: -50px;
+  top: -30px;
   height: 100%;
   width: 100px;
+  background: var(--hightlight);
+}
+.leftBar::before{
+  content:'';
+  position: absolute;
+  right: 0;
+  width: 100dvw;
+  height: 100%;
   background: var(--hightlight);
 }
 

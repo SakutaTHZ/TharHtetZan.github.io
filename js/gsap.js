@@ -21,8 +21,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let leftBarMoving = gsap.timeline({scrollTrigger:{
         trigger:".leftBar",
         start: "-200px center",
-        markers: true,
-        end: ()=> "+="+(document.querySelector('.marquee').offsetHeight+500),
+        end: ()=> "+="+(document.querySelector('.socialSection').offsetHeight-200),
         scrub:1,
     }
     })
@@ -36,8 +35,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         duration: 3
     })
     leftBarMoving.to(".leftBar",{
-        y:"50px",
-        x:-(window.innerWidth),
+        y:"30px",
+        x:-(window.innerWidth+10),
         duration:5
     })
 });
