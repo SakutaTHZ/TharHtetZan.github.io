@@ -39,4 +39,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
         x:-(window.innerWidth+10),
         duration:5
     })
+    leftBarMoving.to(".Socialcontainer",{
+        y:"0px",
+        x:"0%",
+        duration:10
+    })
 });

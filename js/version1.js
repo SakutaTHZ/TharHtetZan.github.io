@@ -66,70 +66,122 @@ const loadStoredColor = () => {
 
 loadStoredColor();
 
-// For intro
-const clickIntro = document.querySelector(".CTC");
-clickIntro.addEventListener("click", () => {
-  const elements = document.querySelectorAll(".box");
-  const counterBox = document.querySelector(".introBox>.box>.counter");
-  let currentIndex = 0;
+const crateIntroBox = () => {
+  // Create the main container
+  const introBox = document.createElement("div");
+  introBox.className = "introBox";
 
-  setInterval(() => {
-    elements[currentIndex].classList.add("moveleft");
-    currentIndex = (currentIndex + 1) % elements.length;
-  }, 750);
+  // Create the first box
+  const box1 = document.createElement("div");
+  box1.className = "box";
 
-  clickIntro.style.opacity = 0;
+  // Create the second box with a counter
+  const box2 = document.createElement("div");
+  box2.className = "box";
+  const counter = document.createElement("p");
+  counter.className = "counter";
+  box2.appendChild(counter);
 
-  let counter = 0;
-  setTimeout(() => {
-    const intervalId = setInterval(() => {
-      counterBox.innerHTML = counter++;
-      if (counter === 4) {
-        clearInterval(intervalId);
-        counterBox.innerHTML = "Welcome";
-      }
-    }, 750);
-  }, 2500);
+  // Create the third box
+  const box3 = document.createElement("div");
+  box3.className = "box";
 
-  setTimeout(() => {
+  // Create the CTC container
+  const ctc = document.createElement("div");
+  ctc.className = "CTC";
+
+  // Create the pulseBox
+  const pulseBox = document.createElement("div");
+  pulseBox.className = "pulseBox interactable";
+  pulseBox.setAttribute("data-type", "fingerprint");
+
+  // Create the CTC text
+  const ctcText = document.createElement("p");
+  ctcText.className = "interactable";
+  ctcText.setAttribute("data-type", "fingerprint");
+  ctcText.textContent = "Click To Continue";
+
+  // Append all elements to their respective parents
+  ctc.appendChild(pulseBox);
+  ctc.appendChild(ctcText);
+  introBox.appendChild(box1);
+  introBox.appendChild(box2);
+  introBox.appendChild(box3);
+  introBox.appendChild(ctc);
+
+  // Append the main container to the body
+  document.body.appendChild(introBox);
+};
+
+const introsequence = false;
+if (introsequence) {
+  crateIntroBox();
+
+  const clickIntro = document.querySelector(".CTC");
+  clickIntro.addEventListener("click", () => {
+    const elements = document.querySelectorAll(".box");
+    const counterBox = document.querySelector(".introBox>.box>.counter");
+    let currentIndex = 0;
+
     setInterval(() => {
-      elements[currentIndex].classList.add("moveright");
+      elements[currentIndex].classList.add("moveleft");
       currentIndex = (currentIndex + 1) % elements.length;
     }, 750);
+
+    clickIntro.style.opacity = 0;
+
+    let counter = 0;
     setTimeout(() => {
-      document.querySelector(".introBox").classList.add("remove");
+      const intervalId = setInterval(() => {
+        counterBox.innerHTML = counter++;
+        if (counter === 4) {
+          clearInterval(intervalId);
+          counterBox.innerHTML = "Welcome";
+        }
+      }, 750);
+    }, 2500);
 
+    setTimeout(() => {
+      setInterval(() => {
+        elements[currentIndex].classList.add("moveright");
+        currentIndex = (currentIndex + 1) % elements.length;
+      }, 750);
       setTimeout(() => {
-        document.querySelector("nav").classList.remove("hold");
-      }, 1000);
-    }, 3000);
-  }, 6000);
-});
+        document.querySelector(".introBox").classList.add("remove");
 
+        setTimeout(() => {
+          document.querySelector("nav").classList.remove("hold");
+        }, 1000);
+      }, 3000);
+    }, 6000);
+  });
+}
+
+//Moving bulb in the background
 const animatedDiv = document.querySelector(".lightbulb");
 
-const getRandomPercentage=() =>{
+const getRandomPercentage = () => {
   return Math.floor(Math.random() * 100) + "%";
-}
+};
 
-const getRandomPosition=(maxValue) =>{
+const getRandomPosition = (maxValue) => {
   return Math.floor(Math.random() * maxValue) + "px";
-}
+};
 
-const setBulbSize = () =>{
-  return Math.floor(Math.random() * 41) + 10 + 'vh';
-}
-const getRandomBlurValue=()=> {
-  return Math.floor(Math.random() * 101) + 50 + 'px';
-}
+const setBulbSize = () => {
+  return Math.floor(Math.random() * 41) + 10 + "vh";
+};
+const getRandomBlurValue = () => {
+  return Math.floor(Math.random() * 101) + 50 + "px";
+};
 
 function changeBorderRadiusAndPosition() {
   const borderRadius = `${getRandomPercentage()} ${getRandomPercentage()} ${getRandomPercentage()} ${getRandomPercentage()}`;
   animatedDiv.style.borderRadius = borderRadius;
 
-  let bulbSize = setBulbSize()
-  animatedDiv.style.width = bulbSize
-  animatedDiv.style.height = bulbSize
+  let bulbSize = setBulbSize();
+  animatedDiv.style.width = bulbSize;
+  animatedDiv.style.height = bulbSize;
 
   const maxWidth = window.innerWidth - 200;
   const maxHeight = window.innerHeight - 200;
@@ -138,7 +190,7 @@ function changeBorderRadiusAndPosition() {
   const left = getRandomPosition(maxWidth);
   animatedDiv.style.top = top;
   animatedDiv.style.left = left;
-  
+
   const blurValue = getRandomBlurValue();
   animatedDiv.style.filter = `blur(${blurValue}) opacity(.3)`;
 }
@@ -147,13 +199,10 @@ setInterval(changeBorderRadiusAndPosition, 4000);
 
 changeBorderRadiusAndPosition();
 
-const defaultSize = document.querySelector(".marquee")
-console.log(defaultSize.offsetHeight)
-const setSizes = () =>{
-  const leftBar=document.querySelector(".leftBar")
-  console.log(leftBar.offsetWidth)
-  leftBar.style.width=defaultSize.offsetHeight + "px"
-  console.log(leftBar.offsetWidth)
-}
+const defaultSize = document.querySelector(".marquee");
+const setSizes = () => {
+  const leftBar = document.querySelector(".leftBar");
+  leftBar.style.width = defaultSize.offsetHeight + "px";
+};
 
-setSizes()
+setSizes();
