@@ -21,6 +21,8 @@ const themeColors = {
   },
 };
 
+const introsequence = true;
+
 const theme = 0;
 
 const switchBox = document.querySelector(".switchBox");
@@ -113,7 +115,6 @@ const crateIntroBox = () => {
   document.body.appendChild(introBox);
 };
 
-const introsequence = false;
 if (introsequence) {
   crateIntroBox();
 

@@ -388,7 +388,7 @@ nav.unhold {
     width: 100%;
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--bgline);
+    border: 1px solid var(--hightlight);
   }
   .second-row{
     height: 30%;
@@ -400,19 +400,22 @@ nav.unhold {
     width: 70%;
   }
   .first-row>.col>div,.second-row>div,.second-row>div>div{
-    border: 1px solid var(--bgline);
+    border: 1px solid var(--hightlight);
   }
 }
 
 .socialBox{
   position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .socialBox::before{
   content: '';
   position: absolute;
   width: 0%;
   height: 0%;
-  background: var(--bgline);
   border-radius: 100% 0%;
   transition: 0.5s ease-in-out;
 }
@@ -421,6 +424,7 @@ nav.unhold {
   font-size: calc(var(--title-fontsize)*3);
   inset: 10px;
   color: var(--bgline);
+  z-index: -5;
 }
 .socialBox:hover::before{
   width: 100%;
@@ -439,6 +443,41 @@ nav.unhold {
   border-radius: 0 0 10px 0;
   font-family: var(--font-style2);
   letter-spacing: 2px;
+}
+.socialBox>a{
+  text-decoration: none;
+  font-size: var(--normal-fontsize);
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  padding: 0 2px;
+  border-radius: 10px 0 0 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.5s ease-in-out;
+}
+.socialBox:hover a{
+  background: var(--hightlight);
+  color: var(--background);
+  font-weight: bolder;
+  padding: 0 10px;
+}
+.socialBox>img{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  height: 30%;
+  transition: 0.5s ease-in-out;
+  opacity: .5;
+  z-index: -2;
+  border-radius: 10px;
+}
+.socialBox:hover img{
+  bottom: 0px;
+  left: 0px;
+  height: 105%;
+  opacity: 1;
+  border-radius: 0px;
 }
 
 /* Animations */
