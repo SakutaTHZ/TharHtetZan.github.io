@@ -489,6 +489,34 @@ nav.unhold {
   width: calc(var(--title-fontsize) * 3);
   border-radius: 50%;
 }
+.Social-Details{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+  position: relative;
+}
+.Social-Details>.header{
+  display: flex;
+  background: var(--bgline);
+  height: fit-content;
+  gap:10px;
+  padding: 10px 20px;
+}
+.Social-Details>.body{
+  display: flex;
+  height: fit-content;
+  gap:10px;
+  padding: 10px 20px;
+}
+.nameBox{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0 10px;
+}
 
 /* Animations */
 @keyframes scrolling {

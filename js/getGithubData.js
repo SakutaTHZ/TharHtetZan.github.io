@@ -5,11 +5,11 @@ fetch(url)
   .then(response => response.json())
   .then(data => {
     console.log(data)
-    setProfile(data.avatar_url,data.name,data.login)
+    setProfile(data.avatar_url,data.name,data.login,data.bio)
   })
   .catch(error => console.error('Error:', error));
 
-  const setProfile = (link,name,nickname)=>{
+  const setProfile = (link,name,nickname,bio)=>{
     let profileBoxes = document.querySelectorAll('.profile')
     profileBoxes.forEach(profileBox => {
         profileBox.src = link;
@@ -17,4 +17,5 @@ fetch(url)
     });
     document.querySelector('.username').innerHTML = name
     document.querySelector('.nickname').innerHTML = nickname
+    document.querySelector('.bio').innerHTML = bio
   }
