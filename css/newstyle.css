@@ -388,7 +388,6 @@ nav.unhold {
     width: 100%;
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--hightlight);
   }
   .second-row{
     height: 30%;
@@ -399,8 +398,11 @@ nav.unhold {
   .second-row>.extra{
     width: 70%;
   }
-  .first-row>.col>div,.second-row>div,.second-row>div>div{
-    border: 1px solid var(--hightlight);
+  .first-row>.col>div,.second-row>div{
+    border: 1px solid var(--font-color);
+  }
+  .second-row>div>div:first-child{
+    border-right: 2px solid var(--font-color);
   }
 }
 
@@ -421,10 +423,11 @@ nav.unhold {
 }
 .socialBox>ion-icon{
   position: absolute;
-  font-size: calc(var(--title-fontsize)*3);
-  inset: 10px;
-  color: var(--bgline);
+  font-size: calc(var(--title-fontsize)*2);
+  color: var(--font-color);
   z-index: -5;
+  top: 30px;
+  right:10px;
 }
 .socialBox:hover::before{
   width: 100%;
@@ -455,6 +458,9 @@ nav.unhold {
   font-weight: bold;
   letter-spacing: 1px;
   transition: 0.5s ease-in-out;
+  text-align: right;
+  min-width: 100%;
+  text-overflow: ellipsis;
 }
 .socialBox:hover a{
   background: var(--hightlight);
@@ -464,11 +470,11 @@ nav.unhold {
 }
 .socialBox>img{
   position: absolute;
-  bottom: 10px;
-  left: 10px;
-  height: 30%;
+  bottom: 0px;
+  left: 0px;
+  height: 105%;
   transition: 0.5s ease-in-out;
-  opacity: .5;
+  opacity: .1;
   z-index: -2;
   border-radius: 10px;
 }
@@ -549,6 +555,10 @@ nav.unhold {
     .second-row>div{
       display: flex;
       flex-direction: column;
+    }
+    .second-row>div>div:first-child{
+      border-right: 0px solid var(--font-color);
+      border-bottom: 1px solid var(--font-color);
     }
   }
 }

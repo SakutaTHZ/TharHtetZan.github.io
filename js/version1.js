@@ -21,7 +21,7 @@ const themeColors = {
   },
 };
 
-const introsequence = true;
+const introsequence = false;
 
 const theme = 0;
 
