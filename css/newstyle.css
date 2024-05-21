@@ -485,6 +485,10 @@ nav.unhold {
   opacity: 1;
   border-radius: 0px;
 }
+.profile{
+  width: calc(var(--title-fontsize) * 3);
+  border-radius: 50%;
+}
 
 /* Animations */
 @keyframes scrolling {

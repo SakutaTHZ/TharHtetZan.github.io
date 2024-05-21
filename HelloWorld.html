@@ -12,6 +12,7 @@
     />
     <script src="js/version1.js" defer></script>
     <script src="js/HintCursor.js" defer></script>
+    <script src="js/getGithubData.js" defer></script>
     <script src="js/gsap.js"></script>
   </head>
   <body>
@@ -93,17 +94,20 @@
 
     <section class="socialSection">
       <div class="leftBar"></div>
-      <!-- <div class="iconBox">
-        <ion-icon name="logo-facebook"></ion-icon>
-        <ion-icon name="logo-instagram"></ion-icon>
-        <ion-icon name="logo-google"></ion-icon>
-        <ion-icon name="logo-github"></ion-icon>
-        <ion-icon name="logo-linkedin"></ion-icon>
-      </div> -->
       <div class="Socialcontainer target">
         <div class="first-row">
           <div class="col">
-            <div class="Social-Details socialBox"></div>
+            <div class="Social-Details">
+              <div>
+                <img class="profile" />
+                <div class="userData">
+                  <div>
+                    <h2 class="username"></h2>
+                    <p class="nickname"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="col">
             <div class="github socialBox">
@@ -155,7 +159,7 @@
                 class="interactable"
                 data-type="open_in_new"
                 data-text="<b>Chat me with Mesenger"
-                  target="_blank"
+                target="_blank"
                 >Thar Htet Zan</a
               >
             </div>
