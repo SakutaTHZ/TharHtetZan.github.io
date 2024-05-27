@@ -219,9 +219,9 @@ body.addEventListener("click", (event)=>{
   spark.style.left = (event.clientX - body.offsetLeft)+'px'
   spark.style.filter = `hue-rotate(${(Math.random()*360)}deg)`
 
-  for (let i = 0; i <= 7; i++) {
+  for (let i = 0; i <= 4; i++) {
     let span = document.createElement('span')
-    span.style.transform = `rotate(${(i*45)}deg)`
+    span.style.transform = `rotate(${(i*90)}deg)`
     spark.appendChild(span)
   }
 

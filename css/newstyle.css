@@ -506,9 +506,28 @@ nav.unhold {
 }
 .Social-Details>.body{
   display: flex;
+  flex-direction: column;
   height: fit-content;
   gap:10px;
   padding: 10px 20px;
+  height: 100%;
+
+  .socialStats{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .languages{
+      display: flex;
+      gap: 10px;
+      height: 40px;
+    }
+    .languages::before{
+      content: '';
+      background: var(--hightlight);
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 .nameBox{
   display: flex;
@@ -516,6 +535,11 @@ nav.unhold {
   align-items: flex-start;
   flex-direction: column;
   padding: 0 10px;
+}
+.pillTag{
+  border: 1px solid var(--font-color);
+  padding: 3px 20px;
+  border-radius: 20px;
 }
 
 /* Animations */
@@ -609,14 +633,14 @@ nav.unhold {
 
 .spark{
   position: absolute;
-  width: 20px;
-  height: 20px;
-  transform: translate(0px,-10px);
+  width: 30px;
+  height: 30px;
+  transform: translate(0px,-15px);
 }
 .spark span{
   position:absolute;
   width: 2px;
-  height: 10px;
+  height: 15px;
   pointer-events: none;
   transform-origin: bottom;
   overflow: hidden;
