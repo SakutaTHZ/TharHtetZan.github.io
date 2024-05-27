@@ -606,3 +606,37 @@ nav.unhold {
   transition: transform 0.3s ease;
   pointer-events: none; /* To make sure it doesn't interfere with mouse events */
 }
+
+.spark{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transform: translate(0px,-10px);
+}
+.spark span{
+  position:absolute;
+  width: 2px;
+  height: 10px;
+  pointer-events: none;
+  transform-origin: bottom;
+  overflow: hidden;
+  filter: drop-shadow(0 0 10px var(--hightlight)) drop-shadow(0 0 20px var(--hightlight))
+}
+
+.spark span::before{
+  content: '';
+  position:absolute;
+  width: 100%;
+  height:100%;
+  background: var(--hightlight);
+  animation: animate .5s ease-in-out forwards;
+}
+
+@keyframes animate {
+  0%{
+    transform: translateY(100%);
+  }
+  100%{
+    transform: translateY(-100%);
+  }
+}
