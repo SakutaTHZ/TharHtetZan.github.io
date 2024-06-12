@@ -369,11 +369,14 @@ nav.unhold {
   display: flex;
   flex-direction: column;
   transform: translateX(-100%);
+  gap: 10px;
 
   div{
     width: 100%;
     height: 100%;
     display: flex;
+    gap: 10px;
+    border-radius: 10px;
   }
   .first-row{
     height: 70%;
@@ -395,11 +398,16 @@ nav.unhold {
   .second-row>div{
     width: 30%;
   }
+  .second-row>.second-box{
+    display: flex;
+    gap: 10px;
+  }
   .second-row>.extra{
     width: 70%;
   }
-  .first-row>.col>div,.second-row>div{
+  .first-row>.col>div,.second-row>div:not(:first-child),.second-row>.second-box>div{
     border: 1px solid var(--font-color);
+    background: var(--bgline);
   }
   .second-row>div>div:first-child{
     border-right: 2px solid var(--font-color);
@@ -470,18 +478,15 @@ nav.unhold {
 }
 .socialBox>img{
   position: absolute;
-  bottom: 0px;
+  top: 0px;
   left: 0px;
-  height: 105%;
+  width: 120%;
   transition: 0.5s ease-in-out;
   opacity: .1;
   z-index: -2;
   border-radius: 10px;
 }
 .socialBox:hover img{
-  bottom: 0px;
-  left: 0px;
-  height: 105%;
   opacity: 1;
   border-radius: 0px;
 }
