@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&family=Salsa&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jersey+10&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 
 * {
   margin: 0;
@@ -20,7 +21,10 @@
   --shadow: rgba(255, 255, 255, 0.3);
   --font-style1: "Nunito", sans-serif;
   --font-style2: "Jersey 10", sans-serif;
+  --font-style3: "Rubik Mono One", monospace;
   --brightness: brightness(0.3);
+  --light-gray: rgba(255, 255, 255, 0.3);
+  --light-grey: rgba(0, 0, 0, 0.05);
 
   --normal-fontSize: calc(0.1vw + 2vh);
   --title-fontsize: calc(2vw + 2vh);
@@ -382,6 +386,7 @@ nav.unhold {
     height: 70%;
   }
   .first-row>div:first-child{
+    position: relative;
     width: 70%;
   }
   .first-row>div:last-child{
@@ -406,11 +411,12 @@ nav.unhold {
     width: 70%;
   }
   .first-row>.col>div,.second-row>div:not(:first-child),.second-row>.second-box>div{
-    border: 1px solid var(--font-color);
-    background: var(--bgline);
+    border: 1px solid var(--light-gray);
+    background: var(--light-grey);
+    backdrop-filter: blur(2px);
   }
   .second-row>div>div:first-child{
-    border-right: 2px solid var(--font-color);
+    border-right: 2px solid var(--light-gray);
   }
 }
 
@@ -480,7 +486,7 @@ nav.unhold {
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 120%;
+  height: 120%;
   transition: 0.5s ease-in-out;
   opacity: .1;
   z-index: -2;
@@ -495,27 +501,31 @@ nav.unhold {
   border-radius: 50%;
 }
 .Social-Details{
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   padding: 10px;
-  position: relative;
+  height: 100%;
+  width: 100%;
+  border: 1px solid white;
 }
 .Social-Details>.header{
   display: flex;
   background: var(--bgline);
-  height: fit-content;
+  height: 80%;
   gap:10px;
   padding: 10px 20px;
 }
 .Social-Details>.body{
   display: flex;
   flex-direction: column;
-  height: fit-content;
+  height: 20%;
   gap:10px;
   padding: 10px 20px;
   height: 100%;
+  background: #3b3486;
 
   .socialStats{
     display: flex;
@@ -545,6 +555,22 @@ nav.unhold {
   border: 1px solid var(--font-color);
   padding: 3px 20px;
   border-radius: 20px;
+}
+
+.huge-Title{
+  font-family: var(--font-style3);
+  font-weight: bolder;
+  line-height: 1em;
+  font-size:calc(var(--title-fontsize) * 1.2);
+}
+.socialSection .extra{
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.socialSection{
+  padding: 0 5%;
 }
 
 /* Animations */
@@ -618,7 +644,6 @@ nav.unhold {
       flex-direction: column;
     }
     .second-row>div>div:first-child{
-      border-right: 0px solid var(--font-color);
       border-bottom: 1px solid var(--font-color);
     }
   }
