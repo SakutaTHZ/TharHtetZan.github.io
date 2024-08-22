@@ -694,3 +694,48 @@ nav.unhold {
     transform: translateY(-100%);
   }
 }
+
+.codeTest{
+  display: flex;
+  justify-content: flex-start ;
+  align-items: center ;
+  margin-top: 20px;
+  font-size: .8em;
+  .highlight{
+    color: var(--hightlight);
+  }
+  .string{
+    position: relative;
+    width: 120px;
+    height: 2em;
+    div{
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      .greeting{
+        position: absolute;
+        animation: move 4s linear infinite;
+      }
+      .greeting:nth-child(1){
+        animation-delay: -0;
+      }
+      .greeting:nth-child(2){
+        animation-delay: -1s;
+      }
+      .greeting:nth-child(3){
+        animation-delay: -2s;
+      }
+      .greeting:nth-child(4){
+        animation-delay: -3s;
+      }
+    }
+  }
+}
+
+@keyframes move {
+  from{
+    transform: translateY(-200%);
+  }to{
+    transform: translateY(200%);
+  }
+}
